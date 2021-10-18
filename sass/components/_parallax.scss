@@ -1,0 +1,16 @@
+.parallax{
+    background-image: url('../images/parallax/paralax-default-1920x1280.jpg');
+    height: 12.5rem;         
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: cover;
+    &__overlay{
+        height: 12.5rem;
+        background-color: rgba($parallax-overlay-color, 0.5);      
+    }
+    &__title{
+        @include layout-container;
+        color:  $parallax-title-color; 
+  }
+}
+

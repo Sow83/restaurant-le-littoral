@@ -1,0 +1,116 @@
+// ----------------------------------------------------------------------------
+// Noms des couleurs
+// ----------------------------------------------------------------------------
+    $color-primary     : hsl(36, 47%, 57%);
+    $color-white       : hsl(0, 0, 100%);
+    $color-white-smoke : hsl(0, 0%, 93%);
+    $color-mortar-grey : hsl(0, 0%, 35%);
+    $color-acadia      : hsl(38, 8%, 19%);
+    $color-wild-sand   : hsl(48,19%,95%);
+
+
+// ----------------------------------------------------------------------------
+// Noms de couleurs spécifiques aux éléments( nom du sélecteur + la propriété)
+// soit color ou bg-color (background-color).
+// ----------------------------------------------------------------------------
+
+    // Font families:
+        $font-family-base   :  'Raleway', sans-serif;
+        $font-family-titles : 'Dancing Script', cursive; 
+
+
+    // Line heights:
+        $line-height-base                      : 1.5; 
+        $line-height-presentation-header-title : 1;
+        $line-height-chefs-info                : $line-height-base + 0.5;
+
+
+    // letter-spacing:
+        $letter-spacing-base: 0.056rem;
+
+
+    // Transitions:
+        $transition: all 0.3s ease-in-out;
+
+
+    // Partiel Typography:
+        $body-color: $color-mortar-grey;
+
+
+    //  Partiel parallax:
+         $parallax-overlay-color : $color-acadia;
+         $parallax-title-color   : $color-white;
+
+
+    // Partiel mixins:
+        // bouton 
+            $default-btn-color              : $color-primary;
+            $default-btn-hover-shadow-color : $color-primary;
+            $default-btn-hover-color        : $color-acadia;
+
+        // border
+            $default-border-color: $color-primary;
+
+        //social icons
+            $social-icon-color: $color-primary;
+
+
+            
+    // Partiel header:
+        $header-bg-color     : $color-wild-sand;
+        $header-btn-color    : $color-acadia;
+        $header-btn-bg-color : lighten($color:$color-primary, $amount:10%);
+
+    // Patiel navigation:
+        $nav-link-color         : $color-acadia;
+        $nav-wrapper-link-after : $color-primary;
+
+    
+    // Partiel form:
+        $form-field-border-bottom-color : lighten($color-mortar-grey, 40%);
+        $form-field-bg-color            : $color-white;
+        $form-btn-bg-color              : $color-wild-sand;
+
+    // Partiel footer:
+        $footer-bg-color            : $color-acadia;
+        $footer-color               : $color-white;
+        $footer-title-color         : $color-primary;
+        $footer-free-img-link-color : $color-primary;
+        $footer-link-bg-color       : $color-mortar-grey;
+        $footer-social-icon-color   : $color-acadia;
+        $footer-link-hover-bg-color : $color-primary;
+    
+
+    // partiel home:
+        // Section entry
+            $entry-overlay                : rgba($color-acadia, 0.5);
+            $entry-center-color           : $color-white;
+            $entry-btn-color              : $color-white;
+            $entry-btn-border-color       : $color-white;
+            $entry-btn-hover-border-color : $color-primary;
+
+        // Section presentation
+            $presentation-item-bg-color : $color-white;
+            $presentation-title-color   : $color-primary;
+
+        //  Section menu
+            $menu-price                      : $color-primary;
+            $menu-text                       : $color-acadia;
+            $menu-js-active-filter-btn-color : $color-acadia;
+
+        // Section chefs
+            $chefs-item                      : $color-white-smoke;
+            $chefs-info                      : $color-white;
+            $chefs-social-icons-bg-color     : rgba($color-white, 0.85);
+            $chefs-info-name-color           : $color-acadia;
+            $chefs-underline-bg-color        : $color-primary;
+            $chefs-social-icon-color         : $color-acadia;
+            $chefs-social-icon-hover-color   : $color-primary;
+
+        // Section contact
+            $contact-link-color: $color-primary;
+
+    
+
+
+    

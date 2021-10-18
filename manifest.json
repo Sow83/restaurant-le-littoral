@@ -1,0 +1,18 @@
+{
+ "short_name": "Le littoral",
+ "name": "Restaurant Le littoral",
+ "start_url": "index.hml",
+ "display": "minimal-ui",
+ "icons": [
+  { 
+   "src": "public/images/favicons/icon-192x192.png",
+   "type": "image/png",
+   "sizes": "192x192" 
+  },
+  {
+   "src": "public/images/favicons/icon-512x512.png",
+   "type": "image/png",
+   "sizes": "512x512" 
+  }
+  ]
+}

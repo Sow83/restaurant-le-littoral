@@ -1,0 +1,42 @@
+.footer{
+    background-color : $footer-bg-color;
+    padding: 3rem;
+    color: $footer-color;    
+    text-align: center;  
+    &__title{
+        margin-bottom: 1.563rem;
+        color: $footer-title-color;  
+    }
+    &__social-icons{
+        @include socialIcons; 
+        padding: 3rem 0;       
+    }
+    &__social-icon{
+        @include socialIcon;
+    }
+    &__free-img-link{
+        color: $footer-free-img-link-color;
+    }
+
+// media queries
+    @include breakpoints(desktop){
+        &__link{
+            width: 2.188rem;
+            height: 2.188rem;
+            margin: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: $footer-link-bg-color;
+            transition: $transition;
+        }
+        &__social-icon{
+           color: $footer-social-icon-color;    
+        }           
+         &__link:hover{
+            background-color: $footer-link-hover-bg-color;
+         } 
+    }
+}
+

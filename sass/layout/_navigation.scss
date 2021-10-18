@@ -1,0 +1,39 @@
+.nav{
+    height: 0;
+    overflow: hidden;
+    transition: $transition;  
+    &__link{
+      display: block;
+      padding: 20px 20px;
+      color: $nav-link-color;   
+      font-weight: 600;   
+      cursor: pointer;
+  }
+  &__js-show-nav{
+    height: 16rem;
+  }
+
+//  Media queries
+  @include breakpoints(desktop){
+
+    height: initial;
+    margin-left: auto;
+    &__list{
+      display: flex;
+    }
+    &__link::after{
+      content: '';
+      width: 0;
+      height: 0.313rem;
+      background: $nav-wrapper-link-after;
+      display: block;
+      transition: $transition;
+      margin: auto;
+    }
+    &__link:hover::after{
+      width: 100%;
+    }     
+    
+  }
+}
+

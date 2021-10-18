@@ -1,0 +1,14 @@
+{
+  "name": "restaurant-le-littoral",
+  "version": "1.0.0",
+  "description": "Site de présentation du restaurant Le littoral",
+  "main": "main.js",
+  "scripts": {
+    "sass": "sass --watch sass/main.scss:public/css/style.css",
+    "prefix": "postcss public/css/style.css --use autoprefixer -d public/css/prefixed/"
+  },
+  "keywords": [],
+  "author": "taftaf",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}

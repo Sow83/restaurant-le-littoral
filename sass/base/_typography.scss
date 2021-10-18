@@ -1,0 +1,62 @@
+/**
+ * Le font-size par défaut(mobile et destop) est 16px c'est le meme que celui  
+ * des navigateurs donc les paragraphes sont de 16px
+ */
+
+body{
+    font-family: $font-family-base;
+    letter-spacing: $letter-spacing-base;
+    line-height: $line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: $font-family-titles;
+    text-transform: capitalize;
+}
+
+// mobile et tablet 
+h1{
+  font-size: 2.4rem;
+}
+h2{
+  font-size: 2.2rem;
+}
+h3{
+  font-size: 1.8rem;
+}
+h4{
+  font-size: 1.2rem;
+}
+h5{
+  font-size: 0.5rem;
+}
+h6{
+  font-size: 0.4rem;
+}
+
+// Media queries
+@include breakpoints(desktop){
+  h1{
+    font-size: 3rem;
+  }
+  h2{
+    font-size: 2.8rem;
+  }
+  h3{
+    font-size: 2rem;
+  }
+  h4{
+    font-size: 1.3rem;
+  }
+  h5{
+    font-size: 0.9rem;
+  }
+  h6{
+    font-size: 0.8rem;
+  }
+}

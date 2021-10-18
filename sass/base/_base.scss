@@ -1,0 +1,28 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: $body-color;   
+    background-color: $color-wild-sand;
+}
+
+img{
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+

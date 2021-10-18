@@ -1,0 +1,22 @@
+.form{
+    &__title{
+        margin-bottom: 0.625rem;  
+        font-weight: 700;     
+    }
+    &__field{
+        width: 100%;
+        outline: 0;
+        border:0;
+        border-bottom: 1px solid  $form-field-border-bottom-color;
+        background-color: $form-field-bg-color;
+        padding: 1rem;       
+        margin-bottom: 1.25rem;
+    }
+    &__btn{
+        @include btn;
+        @include border; 
+        background-color: $form-btn-bg-color; 
+    }
+
+}
+

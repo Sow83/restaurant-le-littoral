@@ -1,0 +1,410 @@
+/*--------------------------------------------------------------*\
+  #entry
+\*--------------------------------------------------------------*/  
+.entry{
+    background-image: url("../images/restaurant-1920x900.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh; 
+    margin-bottom: 2rem;
+    &__overlay{
+        background-color: $entry-overlay; 
+        height: inherit;
+    }
+    &__center{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        color: $entry-center-color;      
+        @include layout-container ($paddings-top-bottom: 3rem, $paddings-left-right: 2rem);
+    }
+    &__title{           
+        font-family: $font-family-base;
+        font-weight: 700;
+        line-height: 1.2;      
+    }
+    &__text{
+        font-size: 25px;
+        margin-top: 10px;
+        font-family: $font-family-titles;
+        font-weight: 500;
+    }  
+    &__btn{  
+        width: 126px;
+        margin-top: 30px;
+        @include btn($color: $entry-btn-color);
+        @include border($color: $entry-btn-border-color );  
+        font-weight: 600;
+        &:hover{
+            @include border($color: $entry-btn-hover-border-color); 
+        }
+                                                       
+    }
+
+    // Media queries
+    @include breakpoints(tablet){
+        height: 80vh; 
+    }
+  
+}
+
+
+/*--------------------------------------------------------------*\
+  #presentation
+\*--------------------------------------------------------------*/  
+.presentation{
+    @include layout-container($paddings-top-bottom: 1rem, $paddings-left-right: 2rem);
+    &__header{
+        margin-bottom: 2.625rem;
+        text-align: center;
+    }
+    &__header-title{
+        font-family: $font-family-base;
+        padding-bottom: 0.625rem;
+    }
+    &__item{
+        background-color: $presentation-item-bg-color;
+        @include borderRadius(5px, 5px, 4px, 4px);
+        margin: auto;
+        margin-bottom: 1.875rem;  
+        @include border(1px);
+        max-width: 21rem;         
+    }
+    &__title{
+        padding: 0.625rem;
+        text-align: center;   
+        font-weight: 600;
+        color: $presentation-title-color;
+    }
+    &__img{
+        width: 100%;
+        @include borderRadius(4px, 4px, 0, 0);
+    }
+    &__text{  
+        padding: 0.625rem;     
+    } 
+
+    // Media queries 
+    @include breakpoints(tablet){
+        @include layout-container ($paddings-top-bottom: 1rem, $paddings-left-right: 1rem);
+        display: flex;  
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &__header{
+            display: flex;
+            justify-content: space-between;
+            text-align: initial;
+        }
+        &__header-title{
+            width: 31.707%;
+            text-align: end;
+           line-height: $line-height-presentation-header-title;
+        }
+        &__header-text{
+            width: 65.853%;
+            border-left: 5px solid $color-primary;
+            padding-left: 10px;
+
+        }
+        &__item{
+            flex: 0 1 calc(100%/2 - 2rem);  
+            max-width: initial;                              
+        } 
+    }
+    @include breakpoints(desktop){
+        &__item{
+            flex: 0 1 calc(100%/4 - 2rem);         
+        } 
+    }
+}
+
+
+/*--------------------------------------------------------------*\
+  #Menu
+\*--------------------------------------------------------------*/  
+.menu{
+    &__container{
+        @include layout-container;
+    }
+    &__btn-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1.875rem auto;
+        text-align: center;   
+    }
+    &__filter-btn{
+        @include btn;
+        @include border;  
+        max-width: 10rem;
+        overflow: hidden;     
+        margin: 0.5rem;
+    }
+    &__content{
+        display: flex;
+        flex-wrap: wrap;   
+    }
+    &__item{
+        max-width: 21rem;   
+        margin: auto;
+        margin-bottom: 3.125rem;
+        box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 50%);
+        padding: 8px;
+        @include borderRadius(8px, 8px, 8px, 8px);
+    }
+    &__img{
+        @include border(4px);
+        @include borderRadius(8px, 8px, 8px, 8px);
+        object-fit: cover;
+        height: 12.5rem;
+    }
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__header-title{
+        font-weight: 600;
+    }
+    &__price{
+        color: $menu-price;
+        font-weight: bold;
+        white-space: nowrap;
+        margin-left: 0.125rem;
+    }
+    &__text{
+        border-top: 1px dotted $menu-text;
+        padding-top: 1rem;    
+    }
+    &__js-active-filter-btn{
+        background-color: $color-primary;
+        color: $menu-js-active-filter-btn-color;
+    }
+    
+    // Media queries 
+    @include breakpoints(tablet){
+        &__item{
+            display: flex;
+            max-width: 40rem;
+            box-shadow: none;
+            padding: initial;
+        }
+        &__img{        
+            max-width: 12rem;
+            height: 9.063rem;
+            margin-right: 1.25rem;
+        } 
+    
+    }      
+    @include breakpoints(desktop){
+        &__item{
+            padding: 0  0.313rem;
+            width: 34.8rem;    
+            margin: initial;
+            margin-bottom: 3.125rem;
+        }  
+        &__header-title{
+            white-space: nowrap;
+        }
+    }
+}
+
+
+/*--------------------------------------------------------------*\
+  #Chefs
+\*--------------------------------------------------------------*/  
+/**
+ * 1. centrage horizontal
+ */
+.chefs{
+    &__parallax{
+        // @include backgroundParallax ($imageUrl: url('../images/parallax/paralax-chef-1920x1280.jpg'));      
+        background-image:  url('../images/parallax/paralax-chef-1920x1280.jpg');
+    }
+    &__center{
+        @include layout-container;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__text{
+        text-align: center;
+        padding: 0 1rem 5rem 1rem;
+    }
+    &__item{
+        max-width: 21rem;         
+        margin: auto;
+        margin-bottom: 2rem;
+        box-shadow: 0px 2px 15px $chefs-item;
+        @include border;
+        @include borderRadius;
+    }  
+    &__container-photo{
+        overflow: hidden;
+        height: 13rem;   
+        background-color: lighten($color:$color-primary, $amount:20%);
+    }
+    &__info{
+        height: 13rem;     
+        background-color: $chefs-info;
+        text-align: center;    
+        font-size: 0.813rem;
+        line-height: $line-height-chefs-info;
+        display: table-cell; /* [1] */
+        vertical-align: middle; /* [1] */
+        padding: 1rem;
+        @include borderRadius(0, 0, 4px, 4px);     
+    }
+    &__social-icons{
+        @include socialIcons; 
+        background-color: $chefs-social-icons-bg-color;
+    }
+    &__social-icon{
+       @include socialIcon;
+    }   
+    &__info-name{
+        color: $chefs-info-name-color;
+        font-weight: 700;
+    }
+    &__info-job{
+        font-weight: 600;
+    }
+    &__underline{
+        width: 3.125rem;
+        height: 0.063rem;
+        background-color: $chefs-underline-bg-color;
+        margin: 0.625rem auto;
+    }
+
+    // Media queries
+    @include breakpoints(tablet){
+        &__center{
+            @include layout-container ($paddings-left-right: 1rem);
+        }
+        &__item{            
+            max-width: initial;
+           flex: 0 1 calc(100%/2 - 2rem);          
+         }
+        &__container-photo, 
+        &__info{       
+            height: 15.5rem;        
+         }   
+    }
+    @include breakpoints(desktop){
+        &__item{
+            flex: 0 1 calc(100%/4 - 2rem);            
+            &:hover .chefs__social-icons{
+             opacity: 1;
+            }        
+         }
+         &__container-photo{
+             height: 11.625rem;       
+         }
+         &__info{       
+             height: 11.625rem; 
+             position: relative;      
+         }
+         &__social-icons{       
+             position: absolute;
+             top: -2.5rem;
+             left: 0;
+             opacity: 0;
+             min-width: 100%;
+         }
+         &__social-icon{
+             color: $chefs-social-icon-color;
+             &:hover{
+                 color: $chefs-social-icon-hover-color;
+             }
+         } 
+    }    
+}
+
+
+/*--------------------------------------------------------------*\
+  #contact
+\*--------------------------------------------------------------*/  
+.contact{
+    &__block{
+        @include layout-container;
+    }  
+    &__block-text{
+        margin-top: 3.875rem;
+    } 
+    &__bold{
+        font-weight: 700;    
+    }
+    &__color{
+        color: $contact-link-color;
+        font-weight: 700;    
+    }
+
+    // Media queries
+    @include breakpoints(tablet){
+        &__block{
+            display: flex;
+            justify-content: space-between;
+        } 
+        &__form{
+            flex: 0 1 calc(100%/2 - 1rem);
+        }    
+        &__block-text{
+            flex: 0 1 calc(100%/2 - 1rem);
+        }   
+    }
+    @include breakpoints(desktop){
+        &__form-input{
+            display: flex;
+            justify-content: space-between;
+        }
+        &__form-field{
+            flex: 0 1 calc(50% - 1rem);
+        }
+    }   
+}
+
+
+/*--------------------------------------------------------------*\
+  #map
+\*--------------------------------------------------------------*/  
+.map{
+    &__title{
+        text-align: center;
+        margin-bottom: 1.25rem;
+        font-weight: 700;
+    } 
+    &__responsive {
+        overflow: hidden;
+        padding-bottom: 50%;
+        position: relative;
+        height: 0;
+    }       
+    &__responsive iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position:absolute;
+    }
+    
+    // Media queries
+    @include breakpoints(tablet){
+        &__responsive {
+            padding-bottom: 30%;              
+        }
+    }
+    @include breakpoints(desktop){
+        &__responsive {
+            padding-bottom: 20%;              
+        }
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+// Conteneur de mise en page
+@mixin layout-container ($paddings-top-bottom: 3rem, $paddings-left-right: 2rem) {
+    max-width: 1200px;
+    margin: auto;
+    padding: $paddings-top-bottom $paddings-left-right;
+}
+
+
+// Boutons
+@mixin btn($color: $default-btn-color){   
+    cursor: pointer;
+    padding: 8px 25px;
+    white-space: nowrap;
+    text-transform: capitalize;
+    // border-radius: $border-radius;
+    @include borderRadius();
+    transition: $transition;
+    color: $color;
+    &:hover{
+        box-shadow: inset 10rem 0 0 0 $default-btn-hover-shadow-color;
+        color: $default-btn-hover-color;
+    } 
+}
+
+
+// Bordures
+@mixin border($border-width: 1px, $color: $default-border-color ) {
+    border: $border-width solid $color;
+}
+
+
+// Border radius
+@mixin borderRadius($topleft: 4px, $topright: 4px, $bottomright: 4px, $bottomleft: 4px) {
+	border-top-left-radius: $topleft;
+	border-top-right-radius: $topright;
+	border-bottom-right-radius: $bottomright;
+	border-bottom-left-radius: $bottomleft;
+}
+
+
+// social icons
+@mixin socialIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 15rem;
+    margin: auto;
+    height: 2.5rem;
+}
+
+
+// social icon
+@mixin socialIcon {
+    font-size: 1.25rem;
+    width: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $social-icon-color;
+    transition: $transition;    
+    margin-top: 0.063rem;
+    margin-left: 0.063rem;   
+    &:hover{
+        @include breakpoints(desktop){
+        font-size: 1.75rem;
+        }
+    }   
+}
+
+
+// Media querries
+// Il n'exite pas de point d'arrêt mobile parce que le site est en mobile first
+@mixin breakpoints ($point){
+    @if ($point == tablet) {
+        @media screen and (min-width: 40em) {
+            @content;
+        }
+    }
+    @else if($point == desktop){
+        @media screen and (min-width: 60em) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
