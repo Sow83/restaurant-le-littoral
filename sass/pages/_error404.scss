@@ -1,0 +1,18 @@
+.error404{
+    &__center{
+        @include layout-container;
+        min-height: calc(100vh - 17.563rem);
+        text-align: center;
+        padding-top: 25vh;
+    }
+    &__btn{
+        @include btn;
+        @include border;  
+        display: inline-block;
+        margin-top: 1rem;   
+        &:hover{
+            @include boxShadowInset($offset-x: 18.5rem);
+        } 
+    }
+
+}

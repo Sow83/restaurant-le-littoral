@@ -1,42 +1,107 @@
-.footer{
-    background-color : $footer-bg-color;
-    padding: 3rem;
-    color: $footer-color;    
-    text-align: center;  
-    &__title{
-        margin-bottom: 1.563rem;
-        color: $footer-title-color;  
+.footer {  
+    background-color: $footer-bg-color;
+    &__center {
+        @include layout-container;
+        color: $footer-color;
     }
-    &__social-icons{
-        @include socialIcons; 
-        padding: 3rem 0;       
+    &__item {
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+    }
+    &__title{
+        font-family: $font-family-base;
+        font-weight: 700;
+        margin-bottom: 0.625rem;   
+    }
+    &__color{
+        color: $color-primary;
+        font-family: $font-family-titles;
+        font-size: 1.063rem;
+        font-weight: 700;
+    }
+    &__logo{
+        @include logo;
+    }
+    &__address{     
+        font-size: 0.625rem;
+    }
+     &__social-icons{
+        @include socialIcons;         
     }
     &__social-icon{
-        @include socialIcon;
+     @include socialIcon;
     }
-    &__free-img-link{
-        color: $footer-free-img-link-color;
+    &__link {
+        display: block;
+        margin-bottom: 0.625rem;
+        color: white;
+        @include transition;
     }
+    &__form{
+        position: relative;
+        margin-top: 0.625rem;
+    }
+    &__input{
+        @include borderRadiusButtons;
+        background-color: #28251f;
+        width: 100%;
+        padding: 12.5px 2px;
+        border: 0;
+        color: white;
+        outline: 0;
+        margin-bottom: 0.625rem;
+        @include border($color: $color-mortar-grey);    
 
-// media queries
+        &:focus{
+            @include border;               
+        }
+    }
+    &__btn{
+        position: absolute;
+        right: 0;
+        @include btn;        
+        padding: 10.5px 27.5px;
+        font-size: 1rem;
+    }
+    
+    // media queries
+    @include breakpoints(tablet){
+        &__center {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &__item:not(:last-child) {
+            flex: 0 1 calc(100%/2 - 2rem);
+        }
+    }
     @include breakpoints(desktop){
-        &__link{
+        &__item:not(:last-child){
+            flex: 0 1 calc(100%/4 - 2rem);
+        }
+
+        &__social{
             width: 2.188rem;
             height: 2.188rem;
-            margin: 0.5rem;
+            margin-right: 0.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             background-color: $footer-link-bg-color;
-            transition: $transition;
+            @include transition;
         }
         &__social-icon{
            color: $footer-social-icon-color;    
         }           
-         &__link:hover{
-            background-color: $footer-link-hover-bg-color;
-         } 
+        &__social:hover{
+           background-color: $footer-link-hover-bg-color;
+        } 
+        &__social:focus .footer__social-icon{
+            color: $chefs-social-icon-hover-color;
+            transform: scale(1.4);
+        } 
+       
     }
 }
 

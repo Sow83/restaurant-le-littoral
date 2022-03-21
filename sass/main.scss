@@ -4,16 +4,20 @@
 @import "./base/base";
 @import "./base/reset";
 @import "./base/typography";
+@import "./base/animations";
 
 @import "./components/buttons";
 @import "./components/parallax";
+@import "./components/modal";
 
 @import "./layout/header";
+@import "./layout/navigation";
 @import "./layout/navigation";
 @import "./layout/form";
 @import "./layout/footer";
 
 @import "./pages/home";
+@import "./pages/error404";
 
 
 

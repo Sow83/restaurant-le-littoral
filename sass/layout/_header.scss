@@ -5,21 +5,46 @@
     width: 100%;
     background-color: $header-bg-color;
     box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 50%);
+    &__skip-nav{
+    position: absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    margin-left: 5px;
+    background-color: $color-primary;
+    color: $black;
+        &:focus{
+        position: static;
+        width:auto;
+        height:auto;
+        }
+    }
+    &__center{
+        @include layout-container ($paddings-top-bottom: 0);
+    }
     &__head{
         display: flex;
         justify-content: space-between;
         align-items: center;      
+        height: 4.813rem;
+    }
+    &__logo{
+        @include logo;
     }
     &__btn{
+        @include btn;  
         display: none;
       }
-    &__button-toggle{
+    &__buttons-toggle{
         background: transparent;
         border: 0;
-        cursor: pointer;
-        width: 36px;
-        height: 36px;
-        margin-top: 17px;      
+        cursor: pointer;    
+    }
+    &__button-toggle{
+        width: 1.5rem;
+        height: 1.5rem; 
     }
     &__button-close{
         display: none;
@@ -32,30 +57,18 @@
     }
 
     // Media queries
-    @include breakpoints(desktop){
-        
+    @include breakpoints(desktop){        
         &__center{
-            @include layout-container ($paddings-top-bottom: 0);
             display: flex;
             align-items: center;      
         }
         &__btn{
-            display: inline-block;
-            @include btn($header-btn-color);
-            @include border;
-            font-weight: 600;
-            background-color: $header-btn-bg-color;
+            display: inline-block;      
           }
-        &__button-toggle{
+        &__buttons-toggle{
            display: none;             
         }
  
     }
 }
-
-
-
-
-
-
 

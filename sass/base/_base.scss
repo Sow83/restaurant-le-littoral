@@ -14,15 +14,33 @@ html{
 
 body{
     color: $body-color;   
-    background-color: $color-wild-sand;
+    background-color: $body-bg-color;
 }
 
 img{
     width: 100%;
+    height: auto;
 }
 
 a {
     text-decoration: none;
+    @include transition;
+}
+a:hover{
+    color: $color-primary;
+}
+textarea{
+    resize: none;
+}
+
+/**
+ * 1. Evite la supperposition de l'entête sur les ancres des sections et du menu principal.
+ *    La hauteur de l'entête est de 4.813rem. 
+ */
+section:target:not(.hero),
+main{ /*[1]*/
+    padding-top: 4.813rem; 
+    margin-top: -4.813rem;
 }
 
 

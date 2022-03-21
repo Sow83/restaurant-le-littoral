@@ -1,53 +1,71 @@
 // Conteneur de mise en page
-@mixin layout-container ($paddings-top-bottom: 3rem, $paddings-left-right: 2rem) {
+@mixin layout-container ($paddings-top-bottom: 4rem, $paddings-left-right: 1rem){
     max-width: 1200px;
     margin: auto;
     padding: $paddings-top-bottom $paddings-left-right;
 }
-
-
+//  logo
+@mixin logo {
+    width: 10rem;
+    height: 2.344rem;
+}
 // Boutons
-@mixin btn($color: $default-btn-color){   
-    cursor: pointer;
-    padding: 8px 25px;
-    white-space: nowrap;
-    text-transform: capitalize;
-    // border-radius: $border-radius;
-    @include borderRadius();
-    transition: $transition;
+@mixin btn($color: $default-btn-color, $background: $color-primary){   
+    @include borderRadiusButtons; 
+    @include border;  
+    @include transition;
+    font-family: $font-family-base;
+    cursor: pointer;   
+    padding: 12px 43px;
     color: $color;
+    background-color: $background;
+    font-size: 16px;
+    letter-spacing: inherit;
     &:hover{
-        box-shadow: inset 10rem 0 0 0 $default-btn-hover-shadow-color;
+        @include boxShadowInset;
         color: $default-btn-hover-color;
     } 
 }
 
+//  box-shadow
+@mixin boxShadowInset($offset-x: 11rem, $offset-y: 0, $blur-radius: 2px, $spread-radius: 0, $color: lighten($color: $color-primary, $amount: 10%)) {
+    box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+  }
+  
+// Transitions
+@mixin transition ($property: all, $duration: 0.4s){
+    transition: $property $duration ease-in-out;
+}
 
 // Bordures
-@mixin border($border-width: 1px, $color: $default-border-color ) {
+@mixin border($border-width: 1px, $color: $default-border-color) {
     border: $border-width solid $color;
 }
 
 
 // Border radius
-@mixin borderRadius($topleft: 4px, $topright: 4px, $bottomright: 4px, $bottomleft: 4px) {
+@mixin borderRadius($topleft: 8px, $topright: 8px, $bottomright: 8px, $bottomleft: 8px) {
+	border-top-left-radius: $topleft;
+	border-top-right-radius: $topright;
+	border-bottom-right-radius: $bottomright;
+	border-bottom-left-radius: $bottomleft;
+}
+// Border radius buttons
+@mixin borderRadiusButtons($topleft: 4px, $topright: 4px, $bottomright: 4px, $bottomleft: 4px) {
 	border-top-left-radius: $topleft;
 	border-top-right-radius: $topright;
 	border-bottom-right-radius: $bottomright;
 	border-bottom-left-radius: $bottomleft;
 }
 
-
 // social icons
 @mixin socialIcons {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    max-width: 15rem;
-    margin: auto;
+    justify-content: space-between;
+    max-width: 13rem;
     height: 2.5rem;
 }
-
 
 // social icon
 @mixin socialIcon {
@@ -57,16 +75,39 @@
     align-items: center;
     justify-content: center;
     color: $social-icon-color;
-    transition: $transition;    
-    margin-top: 0.063rem;
-    margin-left: 0.063rem;   
+    @include transition;
+    margin-top: 0.063rem; 
     &:hover{
-        @include breakpoints(desktop){
-        font-size: 1.75rem;
-        }
-    }   
+        transform: scale(1.4);
+    }
+    &:focus{
+        color: $chefs-social-icon-hover-color;
+        transform: scale(1.4);
+    }  
 }
 
+// Media querries pour l'image héro et les parallax (alternative à srcset)
+// Les images ont la meme taille que les breakpoints(480px, 960px, 1440px, 1920px)
+@mixin breakpoints-img-hero-and-parallax ($point){
+    @if ($point == small) {
+        @media screen and (min-width: 30em) {
+            @content;
+        }
+    }
+    @else if($point == medium){
+        @media screen and (min-width: 60em) {
+            @content;
+        }
+    }
+    @else if($point == large){
+        @media screen and (min-width: 90em) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
 
 // Media querries
 // Il n'exite pas de point d'arrêt mobile parce que le site est en mobile first

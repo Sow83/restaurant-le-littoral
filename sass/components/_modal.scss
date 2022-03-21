@@ -1,0 +1,73 @@
+/**
+ * 1. Inset est l'équivalent de top, bottom, left, right mais n'est pas  
+      pris en charge par inernet explorer
+ * 2. Fait disparaitre la barre de scroll (body) lors d'un clic sur un bouton  modal
+ * 3. Filter permet de changr la couleur du svg (utiliser un générateur de filtre de couleur svg)
+
+ */
+.modal{
+  &__overlay-body{
+    position: fixed;
+    z-index: 200;
+    /* top: 0;
+    bottom: 0;
+    left: 0;  
+    right: 0; */
+    inset: 0; /* [1] */
+    padding: 0 0.8rem;
+    background-color: $modal-overlay-bg-color;
+    overflow: auto;
+    visibility: hidden;
+    &.open-modal{
+      visibility: visible; 
+    }
+  }
+  &__js-body-no-scrool {
+    overflow: hidden; /* [2] */
+  }
+  &__inner{
+    max-width: 27.813rem;
+    background-color: $modal-bg-color;
+    @include borderRadius;
+    margin: 10rem auto; 
+    padding: 2rem;
+  }
+  &__btn-close{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    transition: transform 400ms ease-in-out;
+    border: 0;
+    background-color: $color-wild-sand;
+  }
+  &__btn-close:hover{
+    transform: scale(1.3) ;
+    cursor: pointer;
+  } 
+  &__btn-close-img{
+    filter: invert(67%) sepia(35%) saturate(543%) hue-rotate(357deg) brightness(90%) contrast(83%); /* [3] */
+  }
+  &__label{
+    font-size: 0.813rem;
+  }
+  &__error-message{
+    margin-top: -0.563rem;
+    margin-bottom: 0.563rem;
+  }
+  &__btn{
+    @include btn; 
+    @include transition($property: box-shadow, $duration: .6s);
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    &:hover{
+      @include boxShadowInset($offset-x: 24rem, $blur-radius: 1rem);
+  }
+  }
+}
+
+
+ 
+  

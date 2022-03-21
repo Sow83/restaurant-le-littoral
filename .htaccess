@@ -1,0 +1,13 @@
+# Enlève le "index.html" de l'url quand on clic sur le logo
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://restaurant-le-littoral.mouhamadousow.fr/ [R=301,L]
+</IfModule>
+
+# Page d'erreur 404
+ErrorDocument 404 /error404.html
+
+
+
+

@@ -1,7 +1,11 @@
 .form{
     &__title{
         margin-bottom: 0.625rem;  
-        font-weight: 700;     
+        font-weight: 700;   
+        color: $color-primary;  
+    }
+    &__text{
+        font-weight: 700;
     }
     &__field{
         width: 100%;
@@ -10,13 +14,32 @@
         border-bottom: 1px solid  $form-field-border-bottom-color;
         background-color: $form-field-bg-color;
         padding: 1rem;       
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.5rem;
+        @include borderRadiusButtons;
     }
-    &__btn{
-        @include btn;
-        @include border; 
-        background-color: $form-btn-bg-color; 
+    &__field:focus{
+        border-bottom: 2px solid  $color-primary;
     }
 
+    &__check-link{
+        color: $color-primary;
+        font-weight: 600;
+    }
+    &__response-message{
+        display: block;
+        margin-bottom: 1.25rem;
+        padding: 5px;
+    }
+    &__error-message{
+        display: block;
+        color: red;
+        font-size: 13px;
+        padding-left: 5px;
+    }
+    &__btn{
+        @include btn;   
+        padding: 10.5px 31.5px;
+        font-size: 1rem;
+    }
 }
 

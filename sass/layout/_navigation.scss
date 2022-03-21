@@ -1,38 +1,53 @@
 .nav{
     height: 0;
     overflow: hidden;
-    transition: $transition;  
+    visibility: hidden; /*Empeche le focus clavier de se déplacer dans la navigation lorsque celui-ci est fermé*/
+    @include transition;
     &__link{
-      display: block;
-      padding: 20px 20px;
+      display: inline-block;
+      margin: 20px 20px;
       color: $nav-link-color;   
       font-weight: 600;   
       cursor: pointer;
   }
+  &__link::after{
+    content: '';
+    width: 0;
+    height: 0.313rem;
+    background: $nav-wrapper-link-after;
+    display: block;
+    @include transition;
+    margin: auto;
+  }
+  &__link:hover::after{
+    width: 100%;
+  } 
+  &__link-active{
+    color: $color-primary;
+  }
+  &__link-active::after{
+      content: '';
+      width: 100%;
+      height: 0.313rem;
+      background: $nav-wrapper-link-after;
+      display: block;
+      @include transition;
+      margin: auto;
+  }
   &__js-show-nav{
-    height: 16rem;
+    height: 23rem;
+    visibility: visible;
   }
 
 //  Media queries
   @include breakpoints(desktop){
-
     height: initial;
+    visibility: visible;
     margin-left: auto;
     &__list{
       display: flex;
     }
-    &__link::after{
-      content: '';
-      width: 0;
-      height: 0.313rem;
-      background: $nav-wrapper-link-after;
-      display: block;
-      transition: $transition;
-      margin: auto;
-    }
-    &__link:hover::after{
-      width: 100%;
-    }     
+     
     
   }
 }

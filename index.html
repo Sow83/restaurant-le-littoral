@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurant Le Littoral à Saint-Jean-Cap-Ferrat. Réserver en ligne en toute simplicité">
 
     <title>Restaurant Le littoral</title>
 
@@ -21,294 +22,474 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="public/css/style.css">
 
-<!-- =======================================================
+    <!-- =======================================================
   * Template Name: Fontenay immobilier
   * Author: Mouhamadou Moustapha Sow
 ======================================================== -->
 </head>
 
 <body>
-
     <!-- ======== Header ======== -->
-    <header class="header">
+    <header class="header" aria-label="entête principale">
+        <a href="#main-content" class="header__skip-nav">Aller au contenu principal</a>
         <div class="header__center">
 
-            <div class="header__head">  
-                <a href="#"><img src="public/images/logo.png" alt="logo"></a>   
-                <button class="header__button-toggle">
-                    <img class="header__button-display" src="public/images/icons-toggle/icon-display.svg"
-                        alt="button-display">
-                    <img class="header__button-close" src="public/images/icons-toggle/icon-close.svg" alt="button-close">
-                </button>   
+            <div class="header__head">
+                <a href="index.html"><img class="header__logo" src="public/images/logo.svg" alt="logo du restaurant le littoral | Accueil"></a>
+                <button type="button" class="header__buttons-toggle" aria-expanded="false" aria-controls="toggleNavbar">
+                    <img class="header__button-display header__button-toggle" aria-label="Ouvrir menu de navigation principale" src="public/images/icons-toggle/icon-display.svg"
+                        alt="button d'ouverture du menu">
+                    <img class="header__button-close header__button-toggle" aria-label="Fermer menu de navigation principale" src="public/images/icons-toggle/icon-close.svg"
+                        alt="bouton de fermeture du menu">
+                </button>
             </div><!-- End header head -->
 
-            <nav class="nav">
+            <nav class="nav" aria-label="navigation principale" id="toggleNavbar">
                 <ul class="nav__list">
-                    <li><a class="nav__link" href="#presentation">Présentation</a></li>
-                    <li><a class="nav__link" href="#menus">Menu</a></li>
-                    <li><a class="nav__link" href="#chefs">Chefs</a></li>
-                    <li><a class="nav__link" href="#contact">Contact</a></li>
+                    <li><a class="nav__link  nav__link-active" href="#anchor-hero" aria-current="page">Accueil</a></li>
+                    <li><a class="nav__link" href="#anchor-about">A propos</a></li>
+                    <li><a class="nav__link" href="#anchor-menus">Menus</a></li>
+                    <li><a class="nav__link" href="#anchor-chefs">Chefs</a></li>
+                    <li><a class="nav__link" href="#anchor-contact">Contact</a></li>
                 </ul>
             </nav><!-- End nav -->
 
-            <a href="#reserver" class="header__btn">Réserver</a>    
-                
+            <button type="button" class="header__btn  modal-btn-js">Réserver</button>
+       
         </div>
     </header>
     <!-- ======== End header ======== -->
 
-    <!-- ======== Entry ======== -->
-    <section class="entry">
-        <div class="entry__overlay">
-            <div class="entry__center">
-                <h1 class="entry__title">Restaurant <br> Le littoral</h1>
-                <p class="entry__text">Nous sommes près de la mer, à la frontière des saveurs.</p>            
-                <a class="entry__btn" href="#contact">Réserver</a>                
+    <!-- ======== Hero ======== -->
+    <section aria-label="image hero" class="hero" id="anchor-hero">
+        <div class="hero__overlay">
+            <div class="hero__center" data-aos="zoom-in-up">
+                <h1 class="hero__title">Restaurant <br> Le littoral</h1>
+                <p class="hero__text">Nous sommes près de la mer, à la frontière des saveurs.</p>
+                <button class="hero__btn  modal-btn-js">Réserver</button>
             </div>
         </div>
+          
     </section>
-    <!-- ======== End entry ======== -->
+    <!-- ======== End section Hero ======== -->
 
-    <!-- ======== presentation ======== -->
-    <section class="presentation" id="presentation">
-
-        <section class="presentation__header">
-            <h2 class="presentation__header-title">Necessitibus aspernatur </h2>
-            <p class="presentation__header-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis numquam quis
-                quaerat. Consequuntur, illo, distinctio aspernatur officiis beatae nesciunt facilis, incidunt nobis
-                sunt voluptate rem voluptas quisquam temporibus natus laboriosam? Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Voluptatem illo necessitatibus quae delectus odio.
-            </p>
-        </section><!-- End presentation header -->
-        
-        <div class="presentation__item">
-            <img class="presentation__img" src="public/images/restaurant-640x425.jpg" loading="lazy" alt="restaurant le littoral">
-            <h3 class="presentation__title">Le restaurant</h3>
-            <p class="presentation__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                architecto beatae vitae dicta sunt explicabo.
-            </p>
-        </div><!-- End item 1 -->
-
-        <div class="presentation__item">
-            <img class="presentation__img" src="public/images/équipe-640x422.jpg" loading="lazy"
-                alt="l'équipe du restaurant le littoral">
-            <h3 class="presentation__title">L'Equipe</h3>
-            <p class="presentation__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                architecto beatae vitae dicta sunt explicabo.
-            </p>
-        </div><!-- End item 2 -->
-
-        <div class="presentation__item">
-            <img class="presentation__img" src="public/images/salle-640x426.jpg" loading="lazy"
-                alt="salle du restaurant le littoral">
-            <h3 class="presentation__title">La salle</h3>
-            <p class="presentation__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                architecto beatae vitae dicta sunt explicabo.
-            </p>
-        </div><!-- End item 3 -->
-
-        <div class="presentation__item">
-            <img class="presentation__img" src="public/images/bar-640x427.jpg" loading="lazy"
-                alt="bar du restaurant le littoral">
-            <h3 class="presentation__title">Le bar</h3>
-            <p class="presentation__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                architecto beatae vitae dicta sunt explicabo.
-            </p>
-        </div><!-- End item 4 -->
-
-    </section>
-    <!-- ======== End presentation ======== -->
-
-    <!-- ======== menu ======== -->
-    <section class="menu" id="menus">
-
-        <div class="parallax">
-            <div class="parallax__overlay">
-                <h2 class="parallax__title">Nos menus</h2>
-            </div>
-        </div><!-- End parallax -->
-
-        <div class="menu__container">
-            <div class="menu__btn-container">
-                <a class="menu__filter-btn  menu__js-active-filter-btn" data-category="tout">Tout</a>
-                <a class="menu__filter-btn" data-category="petit-dejeuner">Petit-Déjeuner</a>
-                <a class="menu__filter-btn" data-category="dejeuner">Déjeuner</a>
-                <a class="menu__filter-btn" data-category="dessert">Dessert</a>
-                <a class="menu__filter-btn" data-category="diner">Diner</a>
-            </div>
-
-            <div class="menu__content">
-                <!-- données javascripts -->
-            </div>
+    <!-- ======== Main section  ======== -->
+    <main id="main-content">
+     
+        <div class="modal" role="dialog" aria-labelledby="dialogTitle" aria-modal="true" aria-describedby="info">
+            <div class="modal__overlay-body">
+                <div class="modal__inner" >
+                    <button class="modal__btn-close" type="button"><img class="modal__btn-close-img" src="public/images/icons-toggle/icon-close.svg" alt="button-close"></button>
+                    <form class="form" autocomplete="on" data-id="1">
+                        <h3 id="dialogTitle" class="form__title">Réservations</h3>
+                        <p class="form__text" id="info">Tous les champs  sont obligatoires.</p>
+                        <label class="modal__label" for="nom">Nom</label>
+                        <input class="form__field" id="nom" type="text" required minlength="2" maxlength="45" aria-describedby="name-error">
+                        <label class="form__error-messageText  form__error-message modal__error-message" id="name-error"><!-- javascript --></label>
+                        <label class="modal__label" for="email">Email</label>
+                        <input class="form__field" id="email" type="email" required aria-describedby="email-error">
+                        <label class="form__error-messageEmail  form__error-message modal__error-message" id="email-error"><!-- javascript --></label>
+                        <label class="modal__label" for="tel">Téléphone</label>
+                        <input class="form__field" id="tel" type="tel" required aria-describedby="tel-error">
+                        <label class="form__error-messageTel  form__error-message modal__error-message" id="tel-error"><!-- javascript --></label>
+                        <label class="modal__label" for="number">Nombre de personnes</label>
+                        <input class="form__field" id="number" type="number" required max="15">
+                        <label class="modal__label" for="reservationDate">Date (maximum: 1mois de réservation à l'avance)</label>
+                        <input class="form__field" type='date' id="reservationDate" required>
+                        <label class="modal__label" for="time">Horaires (11h - 19h)</label>
+                        <input class="form__field" id="time" type='time' value="11:00"  min='11:00' max='19:00' required>                           
+                        <input type="checkbox" id="modal__check" required  >
+                        <label class="modal__label" for="modal__check">J’ai lu et accepte la&thinsp;<a class="form__check-link" href="">politique de confidentialité</a> de ce site</label>                           
+                        <label class="form__response-message" role="alert"><!-- javascript --></label>
+                        <input class="modal__btn" type="submit" value="Envoyer">
+                    </form><!-- End form modal -->
+                </div>
+            </div><!-- End Modal  -->
         </div>
-
-    </section>
-    <!-- ======== End menu ======== -->
-
-    <!-- ======== Chefs ======== -->
-    <section class="chefs" id="chefs">
-        <div class="parallax chefs__parallax">
-            <div class="parallax__overlay">
-                <h2 class="parallax__title" >nos chefs</h2>
+        <!-- ======== About section ======== -->
+        <section class="about" id="anchor-about">
+            <div class="about__center">
+                <div class="about__header" data-aos="fade-up" data-aos-delay="800">
+                    <h2 class="about__header-title">A propos de nous</h2>
+                    <p class="about__header-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis numquam
+                        quis
+                        quaerat. Consequuntur, illo, distinctio aspernatur officiis beatae nesciunt facilis, incidunt nobis
+                        sunt voluptate rem voluptas quisquam temporibus natus laboriosam? Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Voluptatem illo necessitatibus quae delectus odio.
+                    </p>
+                </div><!-- End about header -->
+    
+                <div class="about__item" data-aos="zoom-in">
+                    <img class="about__img" width="367" height="242"
+                                            srcset="public/images/about/équipe-280.jpg 280w,
+                                                    public/images/about/équipe-366.jpg 366w"
+                                             sizes="(min-width: 40em) 366px,
+                                                    (min-width: 60em) calc(33.33 *(100vw - 6rem)),
+                                                    calc(100vw - 2rem)"
+                                               src="public/images/about/équipe-366.jpg"
+                                               alt="l'équipe du restaurant le littoral" 
+                                           loading="lazy">
+                    <h3 class="about__title">L'Equipe</h3>
+                    <p class="about__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                        architecto beatae vitae dicta sunt explicabo.
+                    </p>
+                </div><!-- End item 1 -->
+    
+                <div class="about__item" data-aos="zoom-in">
+                    <img class="about__img" width="366" height="244"
+                                           srcset="public/images/about/salle-280.jpg 280w,
+                                                    public/images/about/salle-366.jpg 366w" 
+                                            sizes="(min-width: 40em) 366px,
+                                                    (min-width: 60em) calc(33.33 *(100vw - 6rem)),
+                                                    calc(100vw - 2rem)" 
+                                              src="public/images/about/salle-366.jpg"
+                                              alt="salle du restaurant le littoral" 
+                                          loading="lazy">
+                    <h3 class="about__title">La salle</h3>
+                    <p class="about__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                        architecto beatae vitae dicta sunt explicabo.
+                    </p>
+                </div><!-- End item 2 -->
+    
+                <div class="about__item" data-aos="zoom-in">
+                    <img class="about__img" width="366" height="244"
+                                           srcset="public/images/about/bar-280.jpg 280w,
+                                                    public/images/about/bar-366.jpg 366w" 
+                                            sizes="(min-width: 40em) 366px,
+                                                    (min-width: 60em) calc(33.33 *(100vw - 6rem)),
+                                                    calc(100vw - 2rem)" 
+                                              src="public/images/about/bar-366.jpg"
+                                              alt="bar du restaurant le littoral" 
+                                          loading="lazy">
+                    <h3 class="about__title">Le bar</h3>
+                    <p class="about__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                        architecto beatae vitae dicta sunt explicabo.
+                    </p>
+                </div><!-- End item 3 -->
             </div>
-        </div><!-- End parallax -->
-
-        <div class="chefs__center">
-            <p class="chefs__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae aspernatur fuga
-                distinctio tenetur quasi
-                eligendi aliquid odio ut suscipit eius neces, mollitia laboriosam architecto animi, eveniet
-                corrupti, deserunt ab dolorem?
-            </p>
-
-            <div class="chefs__item">
-                <div class="chefs__container-photo">
-                    <img src="public/images/chefs-cuisine/cuisinier-1.png" alt="cuisinier William Fleury">
+        </section>
+        <!-- ======== End About section  ======== -->
+    
+        <!-- ======== menu ======== -->
+        <section class="menu" id="anchor-menus">
+            <div class="parallax">
+                <div class="parallax__overlay">
+                    <h2 class="parallax__title" data-aos="fade-right" data-aos-delay="1000">Nos menus</h2>
                 </div>
-                <div class="chefs__info">
-                    <h4 class="chefs__info-name">William Fleury</h4>
-                    <p class="chefs__info-job">Chef de Partie</p>
-                    <div class="chefs__underline"></div>
-                    <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
-                    <div class="chefs__social-icons">
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-facebook"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-linkedin"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-pinterest"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-twitter"></i></a>
-                    </div>
+            </div><!-- End parallax -->
+    
+            <div class="menu__center">
+                <div class="menu__btn-container" data-aos="fade-up" data-aos-delay="1000">
+                    <button type="button" class="menu__filter-btn  menu__js-active-filter-btn" data-category="tout" aria-label="voir tous les menus du restaurant">Tout</button>
+                    <button type="button" class="menu__filter-btn" data-category="petit-dejeuner" aria-label="voir nos petit-dejeuner">Petit-Déjeuner</button>
+                    <button type="button" class="menu__filter-btn" data-category="dejeuner" aria-label="voir nos déjeuner">Déjeuner</button>
+                    <button type="button" class="menu__filter-btn" data-category="dessert" aria-label="voir nos dessert">Dessert</button>
+                    <button type="button" class="menu__filter-btn" data-category="diner" aria-label="voir nos dîner">Diner</button>
                 </div>
-            </div><!-- End chef item 1 -->
-
-            <div class="chefs__item">
-                <div class="chefs__container-photo">
-                    <img src="public/images/chefs-cuisine/cuisinier-2.png" alt="Amélia Meyer">
+    
+                <div class="menu__content" data-aos="fade-up" data-aos-delay="1000">
+                    <!-- données javascripts -->
                 </div>
-                <div class="chefs__info">
-                    <h4 class="chefs__info-name">Amélia Meyer</h4>
-                    <p class="chefs__info-job">Second de cuisine</p>
-                    <div class="chefs__underline"></div>
-                    <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
-                    <div class="chefs__social-icons">
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-facebook"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-linkedin"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-pinterest"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div><!-- End chef item 2 -->
-
-            <div class="chefs__item">
-                <div class="chefs__container-photo">
-                    <img src="public/images/chefs-cuisine/cuisinier-3.png" alt="cuisinier Alice Dumaillet">
-                </div>
-                <div class="chefs__info">
-                    <h4 class="chefs__info-name">Alice Dumaillet</h4>
-                    <p class="chefs__info-job">Second de cuisine</p>
-                    <div class="chefs__underline"></div>
-                    <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
-                    <div class="chefs__social-icons">
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-facebook"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-linkedin"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-pinterest"></i></a>
-                        <a class="chefs__link" href="#"><i class="chefs__social-icon  fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div><!-- End chef item 3 -->
-
-            <div class="chefs__item">
-                <div class="chefs__container-photo">
-                    <img src="public/images/chefs-cuisine/cuisinier-4.png" alt="cuisinier Thomas Boulanger">
-                </div>
-                <div class="chefs__info">
-                    <h4 class="chefs__info-name">Thomas Boulanger</h4>
-                    <p class="chefs__info-job">Chef de cuisine</p>
-                    <div class="chefs__underline"></div>
-                    <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
-                    <div class="chefs__social-icons">
-                        <a href="#"><i class="chefs__social-icon  fab fa-facebook"></i></a>
-                        <a href="#"><i class="chefs__social-icon  fab fa-linkedin"></i></a>
-                        <a href="#"><i class="chefs__social-icon  fab fa-pinterest"></i></a>
-                        <a href="#"><i class="chefs__social-icon  fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div><!-- End chef item 4 -->
-
-        </div>
-    </section>
-    <!-- ======== End chefs ======== -->
-
-    <!-- ======== Contact======== -->
-    <section class="contact" id="contact">      
-        <div class="parallax ">
-            <div class="parallax__overlay">
-                <h2 class="parallax__title" id="reserver">Une question, une réservation ?</h2>
             </div>
-        </div><!-- End parallax -->
-
-        <div class="contact__block">
-            <form class="form  contact__form" action="" autocomplete="on">
-                <h3 class="form__title">Contacter-nous</h3>
-                <div class="contact__form-input">
-                    <input class="contact__form-field  form__field" type="text" placeholder="Nom">
-                    <input class="contact__form-field  form__field" type="email" placeholder="Email">
+    
+        </section>
+        <!-- ======== End menu section ======== -->
+    
+        <!-- ======== chefs ======== -->
+        <section class="chefs" id="anchor-chefs">
+            <div class="parallax chefs__parallax">
+                <div class="parallax__overlay">
+                    <h2 class="parallax__title" data-aos="fade-right" data-aos-delay="1000">nos chefs</h2>
                 </div>
-                <textarea class="form__field" cols="30" rows="10" placeholder="Message"></textarea>
-                <input class="form__btn" type="submit">
-            </form><!-- End form -->
-
-            <div class="contact__block-text">
-                <p><span class="contact__bold">L'équipe:</span> Sed ut perspiciatis unde
-                    omnis iste natus error Excepteur sint occaecat cupidatat non proident Sed ut perspiciatis unde
-                    omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                    explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciun
+            </div><!-- End parallax -->
+    
+            <div class="chefs__center">
+                <p class="chefs__text" data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                    aspernatur fuga
+                    distinctio tenetur quasi
+                    eligendi aliquid odio ut suscipit eius neces, mollitia laboriosam architecto animi, eveniet
+                    corrupti, deserunt ab dolorem?
                 </p>
-                <address>
-                    <span class="contact__bold">Adresse: </span><span class="contact__color">L'Oursin, 1 Avenue Denis Semeria, 06230
-                    Saint-Jean-Cap-Ferrat</span><br><br>
-                    <span class="contact__bold">Email:</span>
-                    <a class="contact__color" href="mailto:jim@rock.com">restaurant-le-littoral.com</a><br><br>
-                    <span class="contact__bold">Téléphone: </span><a class="contact__color" href="tel:+131155523">+131155523</a>
-                </address>
-            </div><!-- End block-text -->
-        </div>
+    
+                <div class="chefs__item" data-aos="zoom-in" data-aos-delay="1000">
+                    <div class="chefs__container-img">
+                        <img width="455" height="600" src="public/images/chefs/chef-1.png" alt="William Fleury chef de partie" loading="lazy">
+                    </div>
+                    <div class="chefs__info">
+                        <h3 class="chefs__info-name">William Fleury</h3>
+                        <p class="chefs__info-job">Chef de Partie</p>
+                        <div class="chefs__underline"></div>
+                        <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
+                        <div class="chefs__social-icons">
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook William Fleury" class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin William Fleury" class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest William Fleury" class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter William Fleury" class="chefs__social-icon  fab fa-twitter"></span></a>
+                        </div>
+                    </div>
+                </div><!-- End chef item 1 -->
+    
+                <div class="chefs__item" data-aos="zoom-in" data-aos-delay="1000">
+                    <div class="chefs__container-img">
+                        <img width="455" height="600" class="chefs__img" src="public/images/chefs/chef-2.png" alt="Amélia Meyer second de cuisine" loading="lazy">
+                    </div>
+                    <div class="chefs__info">
+                        <h3 class="chefs__info-name">Amélia Meyer</h3>
+                        <p class="chefs__info-job">Second de cuisine</p>
+                        <div class="chefs__underline"></div>
+                        <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
+                        <div class="chefs__social-icons">
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook Amélia Meyer" class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin Amélia Meyer" class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest Amélia Meyer" class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter Amélia Meyer" class="chefs__social-icon  fab fa-twitter"></span></a>
+                        </div>
+                    </div>
+                </div><!-- End chef item 2 -->
+    
+                <div class="chefs__item" data-aos="zoom-in" data-aos-delay="1000">
+                    <div class="chefs__container-img">
+                        <img width="455" height="600" class="chefs__img" src="public/images/chefs/chef-3.png" alt="Alice Dumaillet second de cuisine" loading="lazy">
+                    </div>
+                    <div class="chefs__info">
+                        <h3 class="chefs__info-name">Alice Dumaillet</h3>
+                        <p class="chefs__info-job">Second de cuisine</p>
+                        <div class="chefs__underline"></div>
+                        <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
+                        <div class="chefs__social-icons">
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook Alice Dumaillet" class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin Alice Dumaillet" class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest Alice Dumaillet" class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter Alice Dumaillet" class="chefs__social-icon  fab fa-twitter"></span></a>
+                        </div>
+                    </div>
+                </div><!-- End chef item 3 -->
+    
+                <div class="chefs__item" data-aos="zoom-in" data-aos-delay="1000">
+                    <div class="chefs__container-img">
+                        <img width="455" height="600" class="chefs__img" src="public/images/chefs/chef-4.png" alt="Thomas Boulanger chef de cuisine" loading="lazy">
+                    </div>
+                    <div class="chefs__info">
+                        <h3 class="chefs__info-name">Thomas Boulanger</h3>
+                        <p class="chefs__info-job">Chef de cuisine</p>
+                        <div class="chefs__underline"></div>
+                        <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
+                        <div class="chefs__social-icons">
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook Thomas Boulanger" class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin Thomas Boulanger" class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest Thomas Boulanger" class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter Thomas Boulanger" class="chefs__social-icon  fab fa-twitter"></span></a>
+                        </div>
+                    </div>
+                </div><!-- End chef item 4 -->
+    
+            </div>
+        </section>
+        <!-- ======== End section chefs ======== -->
+    
+        <!-- ======== Contact======== -->
+        <section class="contact" id="anchor-contact">
+            <div class="parallax">
+                <div class="parallax__overlay">
+                    <h2 class="parallax__title" id="reserver" data-aos="fade-right" data-aos-delay="800">Une question, une réservation ?</h2>
+                </div>
+            </div><!-- End parallax -->
+    
+            <div class="contact__center" data-aos="fade-up">
+                <form class="form  contact__form" autocomplete="on" data-id="1" aria-labelledby="form__title" aria-describedby="descForm">
+                    <h3 id="form__title" class="form__title" data-aos="fade-up">Contacter-nous</h3>
+                    <p class="form__text" id="descForm">Tous les champs  sont obligatoires.</p>
+                    <div class="contact__form-input" data-aos="fade-up">
+                        <div class="contact__form-field">
+                            <label for="form__name">Nom</label>
+                            <input class="form__field" id="form__name" type="text" required aria-describedby="formName">
+                            <label class="form__error-messageText  form__error-message contact__error-message" id="formName">
+                                <!-- javascript -->
+                            </label>
+                        </div>
+                        <div class="contact__form-field">
+                            <label for="form__email">Email</label>
+                            <input class="form__field" id="form__email" type="email" required aria-describedby="formEmail">
+                            <label class="form__error-messageEmail  form__error-message contact__error-message" id="formEmail">
+                                <!-- javascript -->
+                            </label>
+                        </div>
+                    </div>
+                    <label for="form__message">Message</label>
+                    <textarea class="form__field" id="form__message" cols="30" rows="12" data-aos="fade-up" required
+                        minlength="4"></textarea>
+                    <div data-aos="fade-up">
+                        <div class="form__checkbox">
+                            <input type="checkbox" id="contact__check" required>
+                            <label for="contact__check">J’ai lu et accepte la <a class="form__check-link" href="">politique
+                                    de confidentialité</a> de ce site</label><br>
+                        </div>
+                        <label class="form__response-message" role="alert">
+                            <!-- javascript -->
+                        </label>
+                        <input class="form__btn" type="submit" value="Envoyer">
+                    </div>
+    
+                </form><!-- End form -->
+    
+                <div class="contact__block-icons">
+    
+                    <address>
+                        <div class="contact__address" data-aos="fade-up">
+                            <div class="contact__icon-container">
+                                <img class="contact__icon" src="public/images/contact-icons/localization.svg"
+                                    alt="icone de localisation" loading="lazy">
+                            </div>
+                            <div>
+                                <p class="contact__title-address">Adresse</p>
+                                <p>L'Oursin, 1 Av Denis Semeria, 06230 Saint-Jean-Cap-Ferrat</p>
+                            </div>
+                        </div>
+    
+                        <div class="contact__address" data-aos="fade-up">
+                            <div class="contact__icon-container">
+                                <img class="contact__icon" src="public/images/contact-icons/email-envelope.svg"
+                                    alt="icone d'email" loading="lazy">
+                            </div>
+                            <div>
+                                <p class="contact__title-address">Email</p>
+                                <a class="contact__link" href="mailto:restaurant@littoral.com">restaurant@littoral.com</a>
+                            </div>
+                        </div>
+    
+                        <div class="contact__address" data-aos="fade-up">
+                            <div class="contact__icon-container">
+                                <img class="contact__icon" src="public/images/contact-icons/phonecall.svg"
+                                    alt="icone de téléphone" loading="lazy">
+                            </div>
+                            <div>
+                                <p class="contact__title-address">Téléphone</p>
+                                <a class="contact__link" href="tel:+33131155523">01 31 15 55 23</a>
+                            </div>
+                        </div>
+    
+                        <div class="contact__address" data-aos="fade-up">
+                            <div class="contact__icon-container">
+                                <img class="contact__icon" src="public/images/contact-icons/time.svg"
+                                    alt="icone d'indication des horaires d'ouverture" loading="lazy">
+                            </div>
+                            <div>
+                                <p class="contact__title-address">Horaires</p>
+                                <p>Tous les jours 11h - 22h</p>
+                            </div>
+                        </div>
+                    </address>
+                </div><!-- End block-text -->
+            </div>
+    
+            <div class="map">
+                <h3 class="map__title" data-aos="fade-up">Nous trouver</h3>
+                <div class="map__responsive" data-aos="fade-up" data-aos-delay="1000">
+                    <iframe title="carte google map pour situer le restaurant"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.017640276059!2d7.331289515723822!3d43.689396658107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cddb38e3b259f9%3A0xd03e10f2b5458c2!2sL&#39;Oursin!5e0!3m2!1sfr!2sfr!4v1628079362371!5m2!1sfr!2sfr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div><!-- End map -->
+    
+        </section>
+        <!-- ======== End contact section======== -->
 
-    </section>
-    <!-- ======== End contact ======== -->
+    </main>
+    <!-- ======== End Main aria======== -->
 
-    <!-- ======== map ======== -->
-    <section class="map">
-        <h3 class="map__title">Nous trouver</h3>
-        <div class="map__responsive">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.017640276059!2d7.331289515723822!3d43.689396658107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cddb38e3b259f9%3A0xd03e10f2b5458c2!2sL&#39;Oursin!5e0!3m2!1sfr!2sfr!4v1628079362371!5m2!1sfr!2sfr"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
-    </section>
-    <!-- ======== End map ======== -->
-
-    <!-- ======== footer ======== -->
+    <!-- ======== Footer ======== -->
     <footer class="footer">
-        <h3 class="footer__title">Le littoral</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum Lorem ipsum dolor sit amet</p>
-        <div class="footer__social-icons">
-            <a class="footer__link" href="#"><i class="footer__social-icon  fab fa-facebook"></i></a>
-            <a class="footer__link" href="#"><i class="footer__social-icon  fab fa-linkedin"></i></a>
-            <a class="footer__link" href="#"><i class="footer__social-icon  fab fa-pinterest"></i></a>
-            <a class="footer__link" href="#"><i class="footer__social-icon  fab fa-twitter"></i></a>
-        </div>
-        <p>Image Free-Photos de <a class="footer__free-img-link" href="https://pixabay.com/fr/" target="_blank">Pixabay</a>
-            et <a class="footer__free-img-link" href="https://fontawesome.com/" target="_blank">Fontawesome</a>
-        </p>
+        <nav aria-label="navigation pieds de page" class="footer__center">
+
+            <div class="footer__item" data-aos="fade-up">
+                <a href="index.html"><img class="footer__logo" src="public/images/logo.svg" alt="logo du restaurant le littoral | Accueil" loading="lazy"></a>
+
+                <address class="footer__address">
+                    <div>
+                        <span class="footer__title">Adresse:</span>
+                        <span>L'Oursin, 1 Av Denis Semeria, <br> 06230 Saint-Jean-Cap-Ferrat</span>
+                    </div>
+                    <div>
+                        <span class="footer__title">Téléphone:</span>
+                        <a class="footer__color" href="tel:+33131155523">01 31 15 55 23</a>
+                    </div>
+
+                    <div>
+                        <span class="footer__title">Email:</span>
+                        <a class="footer__color" href="mailto:restaurant@littoral.com">restaurant@littoral.com</a>
+                    </div>
+
+                </address>
+                <div class="footer__social-icons">
+                    <a class="footer__social" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook" class="footer__social-icon  fab fa-facebook"></span></a>
+                    <a class="footer__social" href="https://fr-fr.facebook.com/" target="_blank"><span title="linkedin" class="footer__social-icon  fab fa-linkedin"></span></a>
+                    <a class="footer__social" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest" class="footer__social-icon  fab fa-pinterest"></span></a>
+                    <a class="footer__social" href="https://twitter.com/" target="_blank"><span title="twitter" class="footer__social-icon  fab fa-twitter"></span></a>
+                </div>
+
+            </div><!-- End item 1 -->
+
+            <div class="footer__item" data-aos="fade-up">
+                <h4 class="footer__title">Navigation</h4>
+                <ul>
+                    <li><a class="footer__link" href="#anchor-hero">Accueil</a></li>
+                    <li><a class="footer__link" href="#anchor-about">A propos </a></li>
+                    <li><a class="footer__link" href="#anchor-menus">Menus</a></li>
+                    <li><a class="footer__link" href="#anchor-chefs">Chefs</a></li>
+                </ul>
+            </div><!-- End item 2 -->
+
+            <div class="footer__item" data-aos="fade-up">
+                <h4 class="footer__title">Pour les clients</h4>
+                <ul>
+                    <li><a class="footer__link" href="#">Connexion</a></li>
+                    <li><a class="footer__link" href="#">Carte de fidélité</a></li>
+                    <li><a class="footer__link" href="#">Avantages</a></li>
+                    <li><a class="footer__link" href="#">Info carte</a></li>
+
+                </ul>
+            </div><!-- End item 3 -->
+
+            <div class="footer__item" data-aos="fade-up">
+                <h4 class="footer__title">Informations</h4>
+                <ul>
+                    <li><a class="footer__link" href="#">Promotions</a></li>
+                    <li><a class="footer__link" href="#">Forum</a></li>
+                    <li><a class="footer__link" href="#">Blog</a></li>
+                    <li><a class="footer__link" href="#">Mentions légales</a></li>
+
+                </ul>
+            </div><!-- End item 4 -->
+
+            <div class="footer__item" data-aos="fade-up">
+                <h4 class="footer__title">Nos Newsletter</h4>
+                <p>Dipisicing elit. Voluptatibus quod consequuntur reiciendis voluptatum</p>
+                <form class="footer__form" autocomplete="on" data-id="2" aria-label="souscrire aux newsletters">
+                    <label for="emailNews">Email:</label>
+                    <input class="footer__input" id="emailNews" type="email" required>
+                    <input class="footer__btn" type="submit" value="Souscrire">
+                    <span class="form__error-messageEmail  form__error-message"><!--javascript --></span>
+                    <span class="form__response-message"><!-- javascript --></span>
+                </form>
+            </div><!-- End item 5 -->
+
+
+        </nav>
     </footer>
-    <!-- End footer-->
+    <!-- ======== End Footer ======== -->
+
+    <!-- Animate On Scroll Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>

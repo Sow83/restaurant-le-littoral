@@ -1,41 +1,42 @@
 // ----------------------------------------------------------------------------
-// Noms des couleurs
+// Noms des couleurs : https://www.color-blindness.com/color-name-hue/
 // ----------------------------------------------------------------------------
+    // $color-primary     : #93671f;
+    // $color-primary     : #7a670a;
+
     $color-primary     : hsl(36, 47%, 57%);
     $color-white       : hsl(0, 0, 100%);
     $color-white-smoke : hsl(0, 0%, 93%);
     $color-mortar-grey : hsl(0, 0%, 35%);
     $color-acadia      : hsl(38, 8%, 19%);
-    $color-wild-sand   : hsl(48,19%,95%);
+    $color-wild-sand   : hsl(48, 19%, 95%);
+    $color-Charcoal    : hsl(0, 1%, 26%);
+    $black             : hsl(0, 0, 0);
 
 
 // ----------------------------------------------------------------------------
 // Noms de couleurs spécifiques aux éléments( nom du sélecteur + la propriété)
 // soit color ou bg-color (background-color).
 // ----------------------------------------------------------------------------
-
-    // Font families:
+    // Partiel Typography:
+        // Font families:
         $font-family-base   :  'Raleway', sans-serif;
         $font-family-titles : 'Dancing Script', cursive; 
+        // Line heights:
+        $line-height-base               : 1.5; 
+        // letter-spacing:
+        $letter-spacing-base: 0.12rem;
 
 
-    // Line heights:
-        $line-height-base                      : 1.5; 
-        $line-height-presentation-header-title : 1;
-        $line-height-chefs-info                : $line-height-base + 0.5;
-
-
-    // letter-spacing:
-        $letter-spacing-base: 0.056rem;
-
-
-    // Transitions:
-        $transition: all 0.3s ease-in-out;
-
-
-    // Partiel Typography:
+    // Partiel base:
+        $body-bg-color: $color-wild-sand;
         $body-color: $color-mortar-grey;
 
+    // Partiel Modal:
+        $modal-overlay-bg-color: rgba(68, 67, 67, 0.5);
+        $modal-bg-color: $color-wild-sand;
+       
+        
 
     //  Partiel parallax:
          $parallax-overlay-color : $color-acadia;
@@ -44,8 +45,7 @@
 
     // Partiel mixins:
         // bouton 
-            $default-btn-color              : $color-primary;
-            $default-btn-hover-shadow-color : $color-primary;
+            $default-btn-color              : $color-acadia;
             $default-btn-hover-color        : $color-acadia;
 
         // border
@@ -58,8 +58,7 @@
             
     // Partiel header:
         $header-bg-color     : $color-wild-sand;
-        $header-btn-color    : $color-acadia;
-        $header-btn-bg-color : lighten($color:$color-primary, $amount:10%);
+        
 
     // Patiel navigation:
         $nav-link-color         : $color-acadia;
@@ -69,29 +68,25 @@
     // Partiel form:
         $form-field-border-bottom-color : lighten($color-mortar-grey, 40%);
         $form-field-bg-color            : $color-white;
-        $form-btn-bg-color              : $color-wild-sand;
+ 
 
     // Partiel footer:
-        $footer-bg-color            : $color-acadia;
+        $footer-bg-color            : $black;
         $footer-color               : $color-white;
         $footer-title-color         : $color-primary;
-        $footer-free-img-link-color : $color-primary;
         $footer-link-bg-color       : $color-mortar-grey;
         $footer-social-icon-color   : $color-acadia;
         $footer-link-hover-bg-color : $color-primary;
     
 
     // partiel home:
-        // Section entry
-            $entry-overlay                : rgba($color-acadia, 0.5);
-            $entry-center-color           : $color-white;
-            $entry-btn-color              : $color-white;
-            $entry-btn-border-color       : $color-white;
-            $entry-btn-hover-border-color : $color-primary;
+        // Section hero
+            $hero-overlay                : rgba(12, 11, 10, 0.5);
+            $hero-center-color           : $color-white;
 
-        // Section presentation
-            $presentation-item-bg-color : $color-white;
-            $presentation-title-color   : $color-primary;
+        // Section about
+            $line-height-about-header-title : 1;
+            $about-item-bg-color            : $color-white;
 
         //  Section menu
             $menu-price                      : $color-primary;
@@ -102,13 +97,15 @@
             $chefs-item                      : $color-white-smoke;
             $chefs-info                      : $color-white;
             $chefs-social-icons-bg-color     : rgba($color-white, 0.85);
-            $chefs-info-name-color           : $color-acadia;
+            $chefs-info-name-color           : $color-primary;
             $chefs-underline-bg-color        : $color-primary;
             $chefs-social-icon-color         : $color-acadia;
             $chefs-social-icon-hover-color   : $color-primary;
+            $line-height-chefs-info         : $line-height-base + 0.5;
+
 
         // Section contact
-            $contact-link-color: $color-primary;
+            $contact-link: $color-primary;
 
     
 

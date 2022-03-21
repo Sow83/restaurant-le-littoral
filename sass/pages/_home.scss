@@ -1,15 +1,14 @@
 /*--------------------------------------------------------------*\
-  #entry
+  #hero
 \*--------------------------------------------------------------*/  
-.entry{
-    background-image: url("../images/restaurant-1920x900.jpg");
+.hero{
+    background-image: url("../images/hero-480x900.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh; 
-    margin-bottom: 2rem;
     &__overlay{
-        background-color: $entry-overlay; 
+        background-color: $hero-overlay; 
         height: inherit;
     }
     &__center{
@@ -17,7 +16,7 @@
         flex-direction: column;
         justify-content: center;
         height: 100%;
-        color: $entry-center-color;      
+        color: $hero-center-color;      
         @include layout-container ($paddings-top-bottom: 3rem, $paddings-left-right: 2rem);
     }
     &__title{           
@@ -26,23 +25,26 @@
         line-height: 1.2;      
     }
     &__text{
-        font-size: 25px;
-        margin-top: 10px;
+        font-size: 1.75rem;
+        margin-top: 0.625rem;
         font-family: $font-family-titles;
         font-weight: 500;
     }  
-    &__btn{  
-        width: 126px;
-        margin-top: 30px;
-        @include btn($color: $entry-btn-color);
-        @include border($color: $entry-btn-border-color );  
-        font-weight: 600;
-        &:hover{
-            @include border($color: $entry-btn-hover-border-color); 
-        }
-                                                       
+    &__btn{      
+        @include btn;      
+        width: 10.5rem;
+        margin-top: 1.875rem;       
     }
-
+    // Media queries images hero (images adaptatives)
+    @include breakpoints-img-hero-and-parallax(small){
+        background-image: url('../images/hero-960x900.jpg');       
+    }
+    @include breakpoints-img-hero-and-parallax(medium){
+        background-image: url('../images/hero-1440x900.jpg');       
+    }
+    @include breakpoints-img-hero-and-parallax(large){
+        background-image: url('../images/hero-1920x900.jpg');             
+    }
     // Media queries
     @include breakpoints(tablet){
         height: 80vh; 
@@ -52,12 +54,15 @@
 
 
 /*--------------------------------------------------------------*\
-  #presentation
+  #about
 \*--------------------------------------------------------------*/  
-.presentation{
-    @include layout-container($paddings-top-bottom: 1rem, $paddings-left-right: 2rem);
+.about{ 
+    &__center{
+        @include layout-container;
+        padding-top: 3rem;
+    }
     &__header{
-        margin-bottom: 2.625rem;
+        margin-bottom: 4rem;
         text-align: center;
     }
     &__header-title{
@@ -65,33 +70,34 @@
         padding-bottom: 0.625rem;
     }
     &__item{
-        background-color: $presentation-item-bg-color;
-        @include borderRadius(5px, 5px, 4px, 4px);
+        background-color: $about-item-bg-color;
+        @include borderRadius;
         margin: auto;
         margin-bottom: 1.875rem;  
-        @include border(1px);
-        max-width: 21rem;         
+        @include border;
+        max-width: 23rem;         
     }
     &__title{
         padding: 0.625rem;
         text-align: center;   
         font-weight: 600;
-        color: $presentation-title-color;
+        color: $color-primary;
+        font-size: 1.5rem;
     }
     &__img{
-        width: 100%;
-        @include borderRadius(4px, 4px, 0, 0);
+        @include borderRadius($bottomright: 0, $bottomleft: 0);
     }
     &__text{  
         padding: 0.625rem;     
     } 
 
     // Media queries 
-    @include breakpoints(tablet){
-        @include layout-container ($paddings-top-bottom: 1rem, $paddings-left-right: 1rem);
-        display: flex;  
-        justify-content: space-between;
-        flex-wrap: wrap;
+    @include breakpoints(desktop){
+        &__center{
+            display: flex;  
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }    
         &__header{
             display: flex;
             justify-content: space-between;
@@ -100,22 +106,19 @@
         &__header-title{
             width: 31.707%;
             text-align: end;
-           line-height: $line-height-presentation-header-title;
+           line-height: $line-height-about-header-title;
         }
         &__header-text{
             width: 65.853%;
             border-left: 5px solid $color-primary;
-            padding-left: 10px;
+            padding-left: 0.625rem;
 
         }
         &__item{
-            flex: 0 1 calc(100%/2 - 2rem);  
-            max-width: initial;                              
-        } 
-    }
-    @include breakpoints(desktop){
-        &__item{
-            flex: 0 1 calc(100%/4 - 2rem);         
+            flex: 0 1 calc(100%/3 - 2rem);  
+            max-width: initial; 
+            margin: initial;     
+            margin-bottom: 1.875rem;  
         } 
     }
 }
@@ -125,7 +128,7 @@
   #Menu
 \*--------------------------------------------------------------*/  
 .menu{
-    &__container{
+    &__center{
         @include layout-container;
     }
     &__btn-container{
@@ -136,15 +139,17 @@
         text-align: center;   
     }
     &__filter-btn{
-        @include btn;
-        @include border;  
+        @include btn($color: $color-primary, $background: transparent); 
         max-width: 10rem;
         overflow: hidden;     
         margin: 0.5rem;
+        white-space: nowrap;
+        padding: 12px 14px;
     }
     &__content{
         display: flex;
         flex-wrap: wrap;   
+        justify-content: space-between;
     }
     &__item{
         max-width: 21rem;   
@@ -152,26 +157,29 @@
         margin-bottom: 3.125rem;
         box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 50%);
         padding: 8px;
-        @include borderRadius(8px, 8px, 8px, 8px);
+        @include borderRadius;
     }
     &__img{
         @include border(4px);
-        @include borderRadius(8px, 8px, 8px, 8px);
+        @include borderRadius;
         object-fit: cover;
         height: 12.5rem;
     }
     &__header{
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     &__header-title{
         font-weight: 600;
+        font-size: 1.2rem;
     }
     &__price{
         color: $menu-price;
         font-weight: bold;
         white-space: nowrap;
         margin-left: 0.125rem;
+            margin-bottom: -6px;
     }
     &__text{
         border-top: 1px dotted $menu-text;
@@ -206,21 +214,21 @@
         }  
         &__header-title{
             white-space: nowrap;
+            font-size: 1.3rem;
         }
     }
 }
 
 
 /*--------------------------------------------------------------*\
-  #Chefs
+  #chefs
 \*--------------------------------------------------------------*/  
 /**
  * 1. centrage horizontal
  */
 .chefs{
-    &__parallax{
-        // @include backgroundParallax ($imageUrl: url('../images/parallax/paralax-chef-1920x1280.jpg'));      
-        background-image:  url('../images/parallax/paralax-chef-1920x1280.jpg');
+    &__parallax{    
+        background-image:  url('../images/parallax/paralax-chef-480x1080.jpg');
     }
     &__center{
         @include layout-container;
@@ -230,7 +238,7 @@
     }
     &__text{
         text-align: center;
-        padding: 0 1rem 5rem 1rem;
+        margin: 0 1rem 5rem 1rem;
     }
     &__item{
         max-width: 21rem;         
@@ -240,10 +248,12 @@
         @include border;
         @include borderRadius;
     }  
-    &__container-photo{
+    &__container-img{
         overflow: hidden;
         height: 13rem;   
         background-color: lighten($color:$color-primary, $amount:20%);
+        @include borderRadius($bottomright: 0, $bottomleft: 0);
+
     }
     &__info{
         height: 13rem;     
@@ -254,11 +264,13 @@
         display: table-cell; /* [1] */
         vertical-align: middle; /* [1] */
         padding: 1rem;
-        @include borderRadius(0, 0, 4px, 4px);     
+        @include borderRadius($topleft: 0, $topright: 0);     
     }
     &__social-icons{
         @include socialIcons; 
         background-color: $chefs-social-icons-bg-color;
+        margin: auto;
+        padding: 0 22px;
     }
     &__social-icon{
        @include socialIcon;
@@ -266,6 +278,7 @@
     &__info-name{
         color: $chefs-info-name-color;
         font-weight: 700;
+        font-size: 1.2rem;
     }
     &__info-job{
         font-weight: 600;
@@ -276,19 +289,30 @@
         background-color: $chefs-underline-bg-color;
         margin: 0.625rem auto;
     }
+    &__parallax{
+    // Media queries
+        @include breakpoints-img-hero-and-parallax(small){
+            background-image: url('../images/parallax/paralax-chef-960x1080.jpg');       
+        }
+        @include breakpoints-img-hero-and-parallax(medium){
+            background-image: url('../images/parallax/paralax-chef-1440x1080.jpg');       
+        }
+        @include breakpoints-img-hero-and-parallax(large){
+            background-image: url('../images/parallax/paralax-chef-1920x1080.jpg');             
+        }
+    }
 
     // Media queries
     @include breakpoints(tablet){
-        &__center{
-            @include layout-container ($paddings-left-right: 1rem);
-        }
         &__item{            
-            max-width: initial;
-           flex: 0 1 calc(100%/2 - 2rem);          
+        margin: initial;
+        margin-bottom: 2rem;
+        max-width: initial;
+        flex: 0 1 calc(100%/2 - 2rem);          
          }
-        &__container-photo, 
+        &__container-img, 
         &__info{       
-            height: 15.5rem;        
+            height: 16.5rem;        
          }   
     }
     @include breakpoints(desktop){
@@ -296,13 +320,14 @@
             flex: 0 1 calc(100%/4 - 2rem);            
             &:hover .chefs__social-icons{
              opacity: 1;
-            }        
+            }
+            
          }
-         &__container-photo{
+        
+         &__container-img{
              height: 11.625rem;       
          }
          &__info{       
-             height: 11.625rem; 
              position: relative;      
          }
          &__social-icons{       
@@ -316,8 +341,15 @@
              color: $chefs-social-icon-color;
              &:hover{
                  color: $chefs-social-icon-hover-color;
-             }
+             }             
          } 
+         &__link-js:focus .chefs__social-icon{            
+            color: $chefs-social-icon-hover-color;
+            transform: scale(1.4);
+         }
+         &__info-name{
+            font-size: 1.3rem;
+        }
     }    
 }
 
@@ -326,34 +358,50 @@
   #contact
 \*--------------------------------------------------------------*/  
 .contact{
-    &__block{
+    &__center{
         @include layout-container;
-    }  
-    &__block-text{
-        margin-top: 3.875rem;
-    } 
-    &__bold{
-        font-weight: 700;    
     }
-    &__color{
-        color: $contact-link-color;
-        font-weight: 700;    
+    &__block-icons{
+        margin-top: 3rem;
+    } 
+    &__address{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.113rem;
+    }
+    &__icon-container{      
+        min-width: 3.375rem;
+        min-height: 3.375rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 2rem;
+    }
+    &__icon{
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    &__title-address{
+        font-weight: 700;
+        color: $color-primary;
+        font-family: $font-family-titles;
+        font-size: 1.2rem;
+    }
+    &__form-field{
+        margin: 0.625rem 0;
+    }
+    &__link{   
+        color: $contact-link;
+    }
+    &__error-message{
+        margin-top: -0.25rem; 
+        margin-bottom: 0.25rem;
     }
 
     // Media queries
     @include breakpoints(tablet){
-        &__block{
-            display: flex;
-            justify-content: space-between;
-        } 
-        &__form{
-            flex: 0 1 calc(100%/2 - 1rem);
-        }    
-        &__block-text{
-            flex: 0 1 calc(100%/2 - 1rem);
-        }   
-    }
-    @include breakpoints(desktop){
         &__form-input{
             display: flex;
             justify-content: space-between;
@@ -361,6 +409,21 @@
         &__form-field{
             flex: 0 1 calc(50% - 1rem);
         }
+    }
+    @include breakpoints(desktop){
+        &__center{
+            display: flex;
+            justify-content: space-between;
+        } 
+        &__block-icons{
+            margin-top: 6.875rem;
+        } 
+        &__form{
+            flex: 0 1 calc(60% - 1.5rem);
+        }    
+        &__block-icons{
+            flex: 0 1 calc(40% - 1.5rem);
+        }       
     }   
 }
 
@@ -371,8 +434,9 @@
 .map{
     &__title{
         text-align: center;
-        margin-bottom: 1.25rem;
+        margin-bottom: 2rem;
         font-weight: 700;
+        color: $color-primary;
     } 
     &__responsive {
         overflow: hidden;
