@@ -28,7 +28,7 @@
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="public/css/style.css">
 
-    <!-- =======================================================
+<!-- =======================================================
   * Template Name: Fontenay immobilier
   * Author: Mouhamadou Moustapha Sow
 ======================================================== -->
@@ -43,10 +43,10 @@
             <div class="header__head">
                 <a href="index.html"><img class="header__logo" src="public/images/logo.svg" alt="logo du restaurant le littoral | Accueil"></a>
                 <button type="button" class="header__buttons-toggle" aria-expanded="false" aria-controls="toggleNavbar">
-                    <img class="header__button-display header__button-toggle" aria-label="Ouvrir menu de navigation principale" src="public/images/icons-toggle/icon-display.svg"
-                        alt="button d'ouverture du menu">
-                    <img class="header__button-close header__button-toggle" aria-label="Fermer menu de navigation principale" src="public/images/icons-toggle/icon-close.svg"
-                        alt="bouton de fermeture du menu">
+                    <img class="header__button-display header__button-toggle" src="public/images/icons-toggle/icon-display.svg"
+                        alt="Bouton ouvrir menu de navigation principale">
+                    <img class="header__button-close header__button-toggle" src="public/images/icons-toggle/icon-close.svg"
+                        alt="Bouton fermer menu de navigation principale">
                 </button>
             </div><!-- End header head -->
 
@@ -92,21 +92,29 @@
                         <label class="modal__label" for="nom">Nom</label>
                         <input class="form__field" id="nom" type="text" required minlength="2" maxlength="45" aria-describedby="name-error">
                         <label class="form__error-messageText  form__error-message modal__error-message" id="name-error"><!-- javascript --></label>
+
                         <label class="modal__label" for="email">Email</label>
                         <input class="form__field" id="email" type="email" required aria-describedby="email-error">
                         <label class="form__error-messageEmail  form__error-message modal__error-message" id="email-error"><!-- javascript --></label>
+
                         <label class="modal__label" for="tel">Téléphone</label>
                         <input class="form__field" id="tel" type="tel" required aria-describedby="tel-error">
                         <label class="form__error-messageTel  form__error-message modal__error-message" id="tel-error"><!-- javascript --></label>
+                        
                         <label class="modal__label" for="number">Nombre de personnes</label>
                         <input class="form__field" id="number" type="number" required max="15">
+
                         <label class="modal__label" for="reservationDate">Date (maximum: 1mois de réservation à l'avance)</label>
                         <input class="form__field" type='date' id="reservationDate" required>
+
                         <label class="modal__label" for="time">Horaires (11h - 19h)</label>
-                        <input class="form__field" id="time" type='time' value="11:00"  min='11:00' max='19:00' required>                           
+                        <input class="form__field" id="time" type='time' value="11:00"  min='11:00' max='19:00' required>  
+                                                 
                         <input type="checkbox" id="modal__check" required  >
-                        <label class="modal__label" for="modal__check">J’ai lu et accepte la&thinsp;<a class="form__check-link" href="">politique de confidentialité</a> de ce site</label>                           
-                        <label class="form__response-message" role="alert"><!-- javascript --></label>
+                        <label class="modal__label" for="modal__check">J’ai lu et accepte la&thinsp;<a class="form__check-link" href="#">politique de confidentialité</a> de ce site</label>                           
+                        
+                        <span class="form__response-message" role="alert"><!-- javascript --></span>
+                        
                         <input class="modal__btn" type="submit" value="Envoyer">
                     </form><!-- End form modal -->
                 </div>
@@ -183,20 +191,20 @@
         <section class="menu" id="anchor-menus">
             <div class="parallax">
                 <div class="parallax__overlay">
-                    <h2 class="parallax__title" data-aos="fade-right" data-aos-delay="1000">Nos menus</h2>
+                    <h2 class="parallax__title" data-aos="fade-right" data-aos-delay="1000" id="tablist">Nos menus</h2>
                 </div>
             </div><!-- End parallax -->
     
             <div class="menu__center">
-                <div class="menu__btn-container" data-aos="fade-up" data-aos-delay="1000">
-                    <button type="button" class="menu__filter-btn  menu__js-active-filter-btn" data-category="tout" aria-label="voir tous les menus du restaurant">Tout</button>
-                    <button type="button" class="menu__filter-btn" data-category="petit-dejeuner" aria-label="voir nos petit-dejeuner">Petit-Déjeuner</button>
-                    <button type="button" class="menu__filter-btn" data-category="dejeuner" aria-label="voir nos déjeuner">Déjeuner</button>
-                    <button type="button" class="menu__filter-btn" data-category="dessert" aria-label="voir nos dessert">Dessert</button>
-                    <button type="button" class="menu__filter-btn" data-category="diner" aria-label="voir nos dîner">Diner</button>
+                <div role="tablist" aria-labelledby="tablist" class="menu__btn-container" data-aos="fade-up" data-aos-delay="1000">
+                    <button role="tab" id="tab-1"               aria-selected="true"  aria-controls="tabpanel-1" type="button" class="menu__filter-btn  menu__js-active-filter-btn" data-category="tout" aria-label="Tous les menus du restaurant">Tout</button>
+                    <button role="tab" id="tab-2" tabindex="-1" aria-selected="false" aria-controls="tabpanel-2" type="button" class="menu__filter-btn" data-category="petit-dejeuner" aria-label="Nos petits-dejeuners">Petit-Déjeuner</button>
+                    <button role="tab" id="tab-3" tabindex="-1" aria-selected="false" aria-controls="tabpanel-3" type="button" class="menu__filter-btn" data-category="dejeuner" aria-label="Nos déjeuner">Déjeuner</button>
+                    <button role="tab" id="tab-4" tabindex="-1" aria-selected="false" aria-controls="tabpanel-4" type="button" class="menu__filter-btn" data-category="dessert" aria-label="Nos desserts">Dessert</button>
+                    <button role="tab" id="tab-5" tabindex="-1" aria-selected="false" aria-controls="tabpanel-5" type="button" class="menu__filter-btn" data-category="diner" aria-label="Nos dîners">Diner</button>
                 </div>
     
-                <div class="menu__content" data-aos="fade-up" data-aos-delay="1000">
+                <div  role="tabpanel" aria-labelledby="tab-1" id="tabpanel-1" tabindex="0" class="menu__content" data-aos="fade-up" data-aos-delay="1000">
                     <!-- données javascripts -->
                 </div>
             </div>
@@ -330,12 +338,12 @@
                     <div data-aos="fade-up">
                         <div class="form__checkbox">
                             <input type="checkbox" id="contact__check" required>
-                            <label for="contact__check">J’ai lu et accepte la <a class="form__check-link" href="">politique
+                            <label for="contact__check">J’ai lu et accepte la <a class="form__check-link" href="#">politique
                                     de confidentialité</a> de ce site</label><br>
                         </div>
-                        <label class="form__response-message" role="alert">
+                        <span class="form__response-message" role="alert">
                             <!-- javascript -->
-                        </label>
+                        </span>
                         <input class="form__btn" type="submit" value="Envoyer">
                     </div>
     
@@ -456,7 +464,6 @@
                     <li><a class="footer__link" href="#">Carte de fidélité</a></li>
                     <li><a class="footer__link" href="#">Avantages</a></li>
                     <li><a class="footer__link" href="#">Info carte</a></li>
-
                 </ul>
             </div><!-- End item 3 -->
 
@@ -467,7 +474,6 @@
                     <li><a class="footer__link" href="#">Forum</a></li>
                     <li><a class="footer__link" href="#">Blog</a></li>
                     <li><a class="footer__link" href="#">Mentions légales</a></li>
-
                 </ul>
             </div><!-- End item 4 -->
 
@@ -482,9 +488,8 @@
                     <span class="form__response-message"><!-- javascript --></span>
                 </form>
             </div><!-- End item 5 -->
-
-
         </nav>
+        <p class="footer__copyright">2021 - 2022, <a class="footer__copyright-link" href="https://mouhamadousow.fr/">Mouhamadou Sow</a></p>
     </footer>
     <!-- ======== End Footer ======== -->
 

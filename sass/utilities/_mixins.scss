@@ -21,6 +21,7 @@
     background-color: $background;
     font-size: 16px;
     letter-spacing: inherit;
+    font-weight: 500;
     &:hover{
         @include boxShadowInset;
         color: $default-btn-hover-color;

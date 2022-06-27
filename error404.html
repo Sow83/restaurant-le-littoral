@@ -33,14 +33,13 @@
     <!-- ======== Header ======== -->
     <header class="header">
         <div class="header__center">
-
             <div class="header__head">
-                <a class="header__logo" href="index.html"><img src="public/images/logo.svg" alt="logo"></a>
-                <button class="header__button-toggle" aria-label="Ouvrir menu">
-                    <img class="header__button-display" src="public/images/icons-toggle/icon-display.svg"
-                        alt="button-display">
-                    <img class="header__button-close" src="public/images/icons-toggle/icon-close.svg"
-                        alt="button-close">
+                <a href="index.html"><img class="header__logo" src="public/images/logo.svg" alt="logo du restaurant le littoral"></a>
+                <button type="button" class="header__buttons-toggle">
+                    <img class="header__button-display header__button-toggle" src="public/images/icons-toggle/icon-display.svg"
+                        alt="Bouton ouvrir menu de navigation principale">
+                    <img class="header__button-close header__button-toggle" src="public/images/icons-toggle/icon-close.svg"
+                        alt="Bouton fermer menu de navigation principale">
                 </button>
             </div><!-- End header head -->
 
@@ -54,25 +53,7 @@
                 </ul>
             </nav><!-- End nav -->
 
-            <button class="header__btn  modal-btn-js">Réserver</button>
-
-            <div class="modal">
-                <div class="modal__overlay-body">
-                    <div class="modal__inner">
-                        <img class="modal__close" src="public/images/icons-toggle/icon-close.svg" alt="button-close">
-                        <form class="form" autocomplete="on">
-                            <h3 class="form__title">Réservations</h3>
-                            <input class="form__field" type="text" placeholder="Nom / Prénom*" required>
-                            <input class="form__field" type="email" placeholder="Email*" required>
-                            <input class="form__field" type="tel" placeholder="Téléphone*" required>
-                            <input class="form__field" type="number" placeholder="Nombre de personnes*" required
-                                max="15">
-                            <input class="form__field" type="datetime-local" placeholder="Date / Heure*" required>
-                            <input class="modal__btn" type="submit" value="Envoyer">
-                        </form><!-- End form modal -->
-                    </div>
-                </div><!-- End Modal  -->
-            </div>
+            <button class="header__btn">Réserver</button>
         </div>
     </header>
     <!-- ======== End header ======== -->
@@ -85,7 +66,7 @@
     </main>
   
     <!-- ======== Footer ======== -->
-    <section class="footer">
+    <footer class="footer">
         <div class="footer__center">
 
             <div class="footer__item" data-aos="fade-up">
@@ -156,11 +137,11 @@
                     <input class="footer__btn" type="submit" value="Souscrire">
                 </form>
             </div><!-- End item 5 -->
-
-
         </div>
-    </section>
+        <p class="footer__copyright">2021 - 2022, <a class="footer__copyright-link" href="https://mouhamadousow.fr/">Mouhamadou Sow</a></p>
+    </footer>
     <!-- ======== End Footer ======== -->
-
+    <!-- Template Main JS File -->
+    <script src="js/main.js"></script>
 </body>
 </html>

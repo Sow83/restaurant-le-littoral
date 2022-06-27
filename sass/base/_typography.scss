@@ -21,42 +21,21 @@ h6{
 
 // mobile et tablet 
 h1{
-  font-size: 2.4rem;
+  font-size: clamp(2.4rem, 7vw, 3rem);
 }
 h2{
-  font-size: 2.2rem;
+  font-size: clamp(2.2rem, 7vw, 2.8rem);
 }
 h3{
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 7vw, 2rem);
 }
 h4{
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 7vw, 1.3rem);
 }
 h5{
-  font-size: 0.5rem;
+  font-size: clamp(0.5rem, 7vw, 0.9rem);
 }
 h6{
-  font-size: 0.4rem;
+  font-size: clamp(0.4rem, 7vw, 0.8rem);
 }
 
-// Media queries
-@include breakpoints(desktop){
-  h1{
-    font-size: 3rem;
-  }
-  h2{
-    font-size: 2.8rem;
-  }
-  h3{
-    font-size: 2rem;
-  }
-  h4{
-    font-size: 1.3rem;
-  }
-  h5{
-    font-size: 0.9rem;
-  }
-  h6{
-    font-size: 0.8rem;
-  }
-}

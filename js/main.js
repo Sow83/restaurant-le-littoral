@@ -1,4 +1,7 @@
-// piéger le focus à l'intérieur(navigation principale et modal)
+/**
+ *  Navigation principale et modal
+ */
+// piéger le focus à l'intérieur
 function trapFocusInside(focusableElements, firstFocusableElement, lastFocusableElement) {       
     focusableElements.forEach((focusableElement) => {
       if (focusableElement.addEventListener) {
@@ -11,8 +14,7 @@ function trapFocusInside(focusableElements, firstFocusableElement, lastFocusable
   
           if (e.shiftKey) {
             if (e.target === firstFocusableElement) { // shift + tab
-              e.preventDefault();
-  
+              e.preventDefault(); 
               lastFocusableElement.focus();
             }
           }
@@ -182,11 +184,17 @@ window.addEventListener("scroll", function () {
 
 /**
  * Menu du restaurant
- * 
  *  Chaque catégorie est assiociée avec un bouton
  *  Le fait d'ajouter une nouvelle catégoie dans le tableau(menuArr) crée
  *  automatiquement le bouton de la cétégorie en question
  */
+
+// Affiche tous les éléments du menu du restaurant au chargement de la page
+window.addEventListener("DOMContentLoaded", function () {
+    displayMenuItems(menuArr);
+  //   displayMenuBtns();
+});
+
 //Les éléments du menu du restaurant
 
 const menuArr = [
@@ -438,8 +446,8 @@ const menuArr = [
 
 
 // Crée et intégre les éléments html du menu
+const menuContent = document.querySelector(".menu__content");
 function displayMenuItems(menuItems) {
-    const menuContent = document.querySelector(".menu__content");
     let displayMenu = menuItems.map(function (item) {
         return `<article class="menu__item" data-aos="zoom-in">
                     <img class="menu__img"  srcset="${item.img_srcset}"
@@ -461,39 +469,99 @@ function displayMenuItems(menuItems) {
 }
 
 
-// Filtre les éléments du menu à afficher en fonction de la catégorie du bouton cliqué,
-const filterBtns = document.querySelectorAll(".menu__filter-btn");
-filterBtns.forEach(filterBtn => {
-  filterBtn.addEventListener("click", function () {
-    let filterBtnCategory = filterBtn.dataset.category;
+function filterMenuAndEnableDisableBtns(currentBtn) {
+    // Filtre les éléments du menu à afficher en fonction de la catégorie du bouton cliqué,
+    let filterBtnCategory = currentBtn.dataset.category;
     let menuCategory = menuArr.filter(function (menuArrItem) {
       if (filterBtnCategory === menuArrItem.category) {
         return menuArrItem;
-      }
-    
+      }  
     });
     
     // active et désactive les boutons et appelle la fonction qui affihe les éléments
     filterBtns.forEach(element => {
       if (filterBtnCategory !== element.dataset.category) {
-        filterBtn.classList.add("menu__js-active-filter-btn");
+        currentBtn.classList.add("menu__js-active-filter-btn");
         element.classList.remove("menu__js-active-filter-btn");
-        displayMenuItems (menuCategory);  
+        displayMenuItems (menuCategory);
+        tablistAccessibility(currentBtn, element);  
       }
       if (filterBtnCategory === "tout") {
-        filterBtn.classList.add("menu__js-active-filter-btn");
+        currentBtn.classList.add("menu__js-active-filter-btn");
         element.classList.remove("menu__js-active-filter-btn");
        displayMenuItems(menuArr);  
-      }       
+      }   
     });
+}
+const filterBtns = document.querySelectorAll(".menu__filter-btn");
+filterBtns.forEach(filterBtn => { 
+  filterBtn.addEventListener("click",   () => {
+    filterMenuAndEnableDisableBtns(filterBtn)
   });
 });
 
-// Affiche tous les éléments au chargement de la page
-window.addEventListener("DOMContentLoaded", function () {
-    displayMenuItems(menuArr);
-  //   displayMenuBtns();
-});
+
+/**
+ * Accessibilité du Menu du restaurant
+ */
+function tablistAccessibility(btnCurrent, otherBtns) {
+    // Supprime le "tabindex-1" du bouton en cours
+    btnCurrent.removeAttribute("tabindex");
+    // Met un "tabindex-1" aux autres boutons
+    otherBtns.setAttribute("tabindex", "-1");
+    // Met un "aria-selected=true" au bouton en cours
+    btnCurrent.setAttribute("aria-selected", "true");
+    // Met un "aria-selected=false" aux autres boutons
+    otherBtns.setAttribute("aria-selected", "false");
+    // Met la valeur de l'attribut "aria-controls" du bouton en cours dans l'id du panneau tabpanel correspondant
+    menuContent.id = btnCurrent.getAttribute("aria-controls");
+    // Met la valeur de l'id du bouton en cours dans le "aria-labelledby" du panneau tabpanel correspondant
+    menuContent.setAttribute("aria-labelledby", btnCurrent.id);
+}
+
+// Gère le déplacement du focus sur les boutons quand on appuie 
+// sur les flèches gauche et droite du clavier 
+function handleBtnFocusTransfer(e){
+  const focusableFilterBtnElements = document.querySelectorAll(".menu__filter-btn");
+  //Création d'un tableau pour la liste de noeuds(boutons filtre)
+  const focusable = [...focusableFilterBtnElements]; 
+  //Obtenir l'index de l'élément courant qui a le focus
+  const index = focusable.indexOf(document.activeElement); 
+  
+  // Créer une variable pour stocker l'index du prochain élément à cibler
+  let nextIndex = 0;
+
+  if (e.keyCode === 37) {
+    // Flèche gauche
+    e.preventDefault();
+    // nextIndex = index > 0 ? index-1 : focusable.length-1;  :Méthode Ternaire
+    if (index > 0) {
+        nextIndex = index-1;
+    }
+    else{
+        nextIndex = focusable.length-1;
+    }
+    focusableFilterBtnElements[nextIndex].focus();
+    filterMenuAndEnableDisableBtns(focusableFilterBtnElements[nextIndex]);
+  }
+  else if (e.keyCode === 39) {
+    // Flèche droite
+    e.preventDefault();
+    // nextIndex = index < focusable.length-1 ? index+1 : 0;  :Méthode Ternaire
+    if (index < focusable.length - 1 ) {
+        nextIndex = index+1;
+    }
+    else{
+        nextIndex = 0;
+    }
+    focusableFilterBtnElements[nextIndex].focus();
+    filterMenuAndEnableDisableBtns(focusableFilterBtnElements[nextIndex]);
+  }
+}
+let tablist = document.querySelector("[role=tablist]");
+tablist.addEventListener('keydown',handleBtnFocusTransfer);
+
+
 
 
 /**
@@ -508,7 +576,7 @@ window.addEventListener("DOMContentLoaded", function () {
  });
   
 /**
- *  Validation de toutes les formulaires
+ *  Validation de tous les formulaires
  */
  
 const forms = document.querySelectorAll("form");
@@ -601,18 +669,7 @@ forms.forEach(form => {
  /**
  *  Formatage de la date du formulaire de réservation
  */
-// Ce code est remplacé par lafonction dateToHtml
-//   function dateToHtml(date) {
-//     let month = date.getMonth() + 1;
-//     if (month <= 9) {
-//       month = "0" + month ;
-//     }
-//     let day = date.getDate();
-//     if (day <= 9) {
-//       day = '0' + day;
-//    }
-//      return date.getFullYear() + '-' + month + '-' + day;
-//   }
+
 function dateToHtml(date) {
     const  month = date.getMonth() + 1;
     const monthStr = month.toString().padStart(2,'0'); 

@@ -49,7 +49,6 @@
     @include breakpoints(tablet){
         height: 80vh; 
     }
-  
 }
 
 
@@ -172,14 +171,14 @@
     }
     &__header-title{
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, 5vw, 1.3rem);
     }
     &__price{
         color: $menu-price;
         font-weight: bold;
         white-space: nowrap;
         margin-left: 0.125rem;
-            margin-bottom: -6px;
+        margin-bottom: -6px;
     }
     &__text{
         border-top: 1px dotted $menu-text;
@@ -202,8 +201,7 @@
             max-width: 12rem;
             height: 9.063rem;
             margin-right: 1.25rem;
-        } 
-    
+        }   
     }      
     @include breakpoints(desktop){
         &__item{
@@ -214,7 +212,6 @@
         }  
         &__header-title{
             white-space: nowrap;
-            font-size: 1.3rem;
         }
     }
 }
@@ -320,10 +317,8 @@
             flex: 0 1 calc(100%/4 - 2rem);            
             &:hover .chefs__social-icons{
              opacity: 1;
-            }
-            
-         }
-        
+            }          
+         }   
          &__container-img{
              height: 11.625rem;       
          }

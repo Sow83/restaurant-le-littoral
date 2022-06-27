@@ -4,11 +4,23 @@
   "description": "Site de présentation du restaurant Le littoral",
   "main": "main.js",
   "scripts": {
-    "sass": "sass --watch sass/main.scss:public/css/style.css",
+    "sass": "sass --watch sass/main.scss:public/css/style.css --style compressed",
     "prefix": "postcss public/css/style.css --use autoprefixer -d public/css/prefixed/"
   },
-  "keywords": [],
-  "author": "taftaf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sow83/restaurant-le-littoral"
+  },
+  "author": {
+    "name": "Mouhamadou Sow",
+    "email": "msow2512@gmail.com"
+  },
   "license": "ISC",
-  "browserslist": "last 4 versions"
+  "browserslist": "last 4 versions",
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.53.0"
+  }
 }

@@ -63,6 +63,14 @@
         padding: 10.5px 27.5px;
         font-size: 1rem;
     }
+    &__copyright{
+        color: $color-white;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    &__copyright-link{
+        color: $color-primary;
+    }
     
     // media queries
     @include breakpoints(tablet){
@@ -100,8 +108,7 @@
         &__social:focus .footer__social-icon{
             color: $chefs-social-icon-hover-color;
             transform: scale(1.4);
-        } 
-       
+        }    
     }
 }
 

@@ -36,8 +36,6 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    width: 2.25rem;
-    height: 2.25rem;
     transition: transform 400ms ease-in-out;
     border: 0;
     background-color: $color-wild-sand;
@@ -47,6 +45,8 @@
     cursor: pointer;
   } 
   &__btn-close-img{
+    width: 1.5rem;
+    height: 1.5rem;
     filter: invert(67%) sepia(35%) saturate(543%) hue-rotate(357deg) brightness(90%) contrast(83%); /* [3] */
   }
   &__label{
