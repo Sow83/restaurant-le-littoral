@@ -28,6 +28,16 @@
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="public/css/style.css">
 
+    <!-- Accessibility Aos library -->
+    <noscript>
+        <style>
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+
 <!-- =======================================================
   * Template Name: Fontenay immobilier
   * Author: Mouhamadou Moustapha Sow
@@ -66,29 +76,28 @@
     </header>
     <!-- ======== End header ======== -->
 
-    <!-- ======== Hero ======== -->
-    <section aria-label="image hero" class="hero" id="anchor-hero">
-        <div class="hero__overlay">
-            <div class="hero__center" data-aos="zoom-in-up">
-                <h1 class="hero__title">Restaurant <br> Le littoral</h1>
-                <p class="hero__text">Nous sommes près de la mer, à la frontière des saveurs.</p>
-                <button class="hero__btn  modal-btn-js">Réserver</button>
-            </div>
-        </div>
-          
-    </section>
-    <!-- ======== End section Hero ======== -->
-
     <!-- ======== Main section  ======== -->
     <main id="main-content">
+
+        <section aria-label="image hero" class="hero" id="anchor-hero">
+            <div class="hero__overlay">
+                <div class="hero__center" data-aos="zoom-in-up">
+                    <h1 class="hero__title">Restaurant <br> Le littoral</h1>
+                    <p class="hero__text">Nous sommes près de la mer, à la frontière des saveurs.</p>
+                    <button class="hero__btn  modal-btn-js">Réserver</button>
+                </div>
+            </div>
+            
+        </section><!--  End section Hero  -->
      
-        <div class="modal" role="dialog" aria-labelledby="dialogTitle" aria-modal="true" aria-describedby="info">
+        <section class="modal" role="dialog" aria-labelledby="dialogTitle" aria-modal="true" aria-describedby="info">
             <div class="modal__overlay-body">
                 <div class="modal__inner" >
                     <button class="modal__btn-close" type="button"><img class="modal__btn-close-img" src="public/images/icons-toggle/icon-close.svg" alt="button-close"></button>
                     <form class="form" autocomplete="on" data-id="1">
-                        <h3 id="dialogTitle" class="form__title">Réservations</h3>
+                        <h2 id="dialogTitle" class="form__title">Réservations</h2>
                         <p class="form__text" id="info">Tous les champs  sont obligatoires.</p>
+                        
                         <label class="modal__label" for="nom">Nom</label>
                         <input class="form__field" id="nom" type="text" required minlength="2" maxlength="45" aria-describedby="name-error">
                         <label class="form__error-messageText  form__error-message modal__error-message" id="name-error"><!-- javascript --></label>
@@ -119,7 +128,7 @@
                     </form><!-- End form modal -->
                 </div>
             </div><!-- End Modal  -->
-        </div>
+        </section>
         <!-- ======== About section ======== -->
         <section class="about" id="anchor-about">
             <div class="about__center">
@@ -203,10 +212,344 @@
                     <button role="tab" id="tab-4" tabindex="-1" aria-selected="false" aria-controls="tabpanel-4" type="button" class="menu__filter-btn" data-category="dessert" aria-label="Nos desserts">Dessert</button>
                     <button role="tab" id="tab-5" tabindex="-1" aria-selected="false" aria-controls="tabpanel-5" type="button" class="menu__filter-btn" data-category="diner" aria-label="Nos dîners">Diner</button>
                 </div>
-    
-                <div  role="tabpanel" aria-labelledby="tab-1" id="tabpanel-1" tabindex="0" class="menu__content" data-aos="fade-up" data-aos-delay="1000">
-                    <!-- données javascripts -->
+                
+                <!-- All menus -->
+                <div role="tabpanel" class="menu__content" aria-labelledby="tab-1" id="tabpanel-1" tabindex="0"  data-aos="fade-up" data-aos-delay="1000">
+
+                    <!-- Breakfast -->
+                    <div role="tabpanel"  aria-labelledby="tab-2" id="tabpanel-2" tabindex="0" data-aos="fade-up" data-aos-delay="1000">
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img" srcset="public/images/menu/petit-dejeuner-1-192x146.jpg 192w, public/images/menu/petit-dejeuner-1-320x200.jpg 320w" sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/petit-dejeuner-1-320x200.jpg" alt="Délice de fruits" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Délice de fruits</h3>
+                                    <span class="menu__price">15 €</span>
+                                </div>
+                                <p class="menu__text">Curabitur ut velit sit amet turpis blandit iaculis non eget leo. Donec sollicitudin ligula mauris, vitae tempor tellus.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img" srcset="public/images/menu/petit-dejeuner-2-192x146.jpg 192w, public/images/menu/petit-dejeuner-2-320x200.jpg 320w" sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/petit-dejeuner-2-320x200.jpg" alt="Tartine fruité" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Tartine fruité</h3>
+                                    <span class="menu__price">20 €</span>
+                                </div>
+                                <p class="menu__text">Praesent sed justo justo. Nulla in sapien ut diam ultrices ornare eget nec lacus turpis blandit iaculis non egetnon eget.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img" srcset="public/images/menu/petit-dejeuner-3-192x146.jpg 192w, public/images/menu/petit-dejeuner-3-320x200.jpg 320w" sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/petit-dejeuner-3-320x200.jpg" alt="Céréales fruits" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Céréales fruits</h3>
+                                    <span class="menu__price">15 €</span>
+                                </div>
+                                <p class="menu__text">Maecenas varius arcu quis dolor auctor, vel lacinia ex ultricies. Morbi aliquet luctus dui, non gravida erat egestas vitae.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img" srcset="public/images/menu/petit-dejeuner-4-192x146.jpg 192w, public/images/menu/petit-dejeuner-4-320x200.jpg 320w" sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/petit-dejeuner-4-320x200.jpg" alt="Réveil du chef" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Réveil du chef</h3>
+                                    <span class="menu__price">33 €</span>
+                                </div>
+                                <p class="menu__text">Morbi at velit venenatis, imperdiet lacus elementum, facilisis urna. Nulla facilisi. Vivamus imperdiet commodo velit nec posuere.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img" srcset="public/images/menu/petit-dejeuner-5-192x146.jpg 192w, public/images/menu/petit-dejeuner-5-320x200.jpg 320w" sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/petit-dejeuner-5-320x200.jpg" alt="Pancake chantilly sirop d'érable" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Pancake chantilly sirop d'érable</h3>
+                                    <span class="menu__price">45 €</span>
+                                </div>
+                                <p class="menu__text">Vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats</p>
+                            </div>
+                        </article>
+
+                    </div><!-- End breakfast menu -->
+
+                    <!-- Lunch -->
+                    <div role="tabpanel"  aria-labelledby="tab-3" id="tabpanel-3" tabindex="0"
+                        data-aos="fade-up" data-aos-delay="1000">
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dejeuner-1-192x146.jpg 192w, public/images/menu/dejeuner-1-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dejeuner-1-320x200.jpg"
+                                alt="Le banquet, fraîcheur de la mer" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Le banquet, fraîcheur de la mer</h3>
+                                    <span class="menu__price">70 €</span>
+                                </div>
+                                <p class="menu__text">Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware </p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dejeuner-2-192x146.jpg 192w, public/images/menu/dejeuner-2-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dejeuner-2-320x200.jpg"
+                                alt="Thon mi-cuit aux sésames" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Thon mi-cuit aux sésames</h3>
+                                    <span class="menu__price">35 €</span>
+                                </div>
+                                <p class="menu__text">Cras bibendum nisl nec ante rhoncus tristique. Cras consectetur dictum ultricies. Curabitur vulputate fermentum mauris quis posuere.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dejeuner-3-192x146.jpg 192w, public/images/menu/dejeuner-3-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dejeuner-3-320x200.jpg"
+                                alt="Bar rôti et bazar de légumes" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Bar rôti et bazar de légumes</h3>
+                                    <span class="menu__price">50 €</span>
+                                </div>
+                                <p class="menu__text">Cras bibendum nisl nec ante rhoncus tristique. Cras consectetur dictum ultricies. Curabitur vulputate fermentum mauris quis posuere. </p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dejeuner-4-192x146.jpg 192w, public/images/menu/dejeuner-4-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dejeuner-4-320x200.jpg" alt="Gourmet salade"
+                                loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Gourmet salade</h3>
+                                    <span class="menu__price">43 €</span>
+                                </div>
+                                <p class="menu__text">Vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dejeuner-5-192x146.jpg 192w, public/images/menu/dejeuner-5-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dejeuner-5-320x200.jpg" alt="Gourmet vedette"
+                                loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Gourmet vedette</h3>
+                                    <span class="menu__price">50 €</span>
+                                </div>
+                                <p class="menu__text">Vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dejeuner-6-192x146.jpg 192w, public/images/menu/dejeuner-6-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dejeuner-6-320x200.jpg"
+                                alt="Filet de bifteck, sauce au vin" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Filet de bifteck, sauce au vin</h3>
+                                    <span class="menu__price">50 €</span>
+                                </div>
+                                <p class="menu__text">Est ante rhoncus nisi, vel tincidunt nulla massa in quam. Morbi consequat bibendum faucibus. Fusce et accumsan est.</p>
+                            </div>
+                        </article>
+
+                     </div><!-- End lunch menu -->
+
+                     <!-- Dessert -->
+                    <div role="tabpanel"  aria-labelledby="tab-4" id="tabpanel-4" tabindex="0"
+                        data-aos="fade-up" data-aos-delay="1000">
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dessert-1-192x146.jpeg 192w, public/images/menu/dessert-1-320x200.jpeg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dessert-1-320x200.jpeg"
+                                alt="Délice des galaxies" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Délice des galaxies</h3>
+                                    <span class="menu__price">15.5 €</span>
+                                </div>
+                                <p class="menu__text">Cras bibendum nisl nec ante rhoncus tristique. Cras consectetur dictum ultricies. Curabitur vulputate fermentum mauris quis posuere.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dessert-2-192x146.jpg 192w, public/images/menu/dessert-2-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dessert-2-320x200.jpg"
+                                alt="Gâteaux aux noix et caramel" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Gâteaux aux noix et caramel</h3>
+                                    <span class="menu__price">8.5 €</span>
+                                </div>
+                                <p class="menu__text">Est ante rhoncus nisi, vel tincidunt nulla massa in quam. Morbi consequat bibendum faucibus. Fusce et accumsan est.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dessert-3-192x146.jpg 192w, public/images/menu/dessert-3-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dessert-3-320x200.jpg"
+                                alt="Macarons à la groseille" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Macarons à la groseille</h3>
+                                    <span class="menu__price">18 €</span>
+                                </div>
+                                <p class="menu__text">Morbi ornare elit et tristique semper. Quisque ultrices vehicula mi, vitae consectetur ante semper at. In ullamcorper.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dessert-4-192x146.jpg 192w, public/images/menu/dessert-4-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dessert-4-320x200.jpg"
+                                alt="Macaron au chocolat fondant" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Macaron au chocolat fondant</h3>
+                                    <span class="menu__price">13 €</span>
+                                </div>
+                                <p class="menu__text">Vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dessert-5-192x146.jpg 192w, public/images/menu/dessert-5-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dessert-5-320x200.jpg"
+                                alt="truffe aux divers champignons" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">truffe aux divers champignons</h3>
+                                    <span class="menu__price">22 €</span>
+                                </div>
+                                <p class="menu__text">Morbi ornare elit et tristique semper. Quisque ultrices vehicula mi, vitae consectetur ante semper at. In ullamcorper condiment.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dessert-6-192x146.jpg 192w, public/images/menu/dessert-6-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dessert-6-320x200.jpg"
+                                alt="Chocolat, clementine, safran" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Chocolat, clementine, safran</h3>
+                                    <span class="menu__price">20 €</span>
+                                </div>
+                                <p class="menu__text">Nullam gravida neque eu leo porttitor sagittis. Sed est ligula, venenatis tincidunt pretium sit amet, scelerisque et tortor.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/dessert-7-192x146.jpg 192w, public/images/menu/dessert-7-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/dessert-7-320x200.jpg" alt="Surprise glacée"
+                                loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Surprise glacée</h3>
+                                    <span class="menu__price">20 €</span>
+                                </div>
+                                <p class="menu__text">Suspendisse accumsan, eros id dictum laoreet, nisl magna dapibus erat, suscipit
+                                    tincidunt diam arcu ut lacus. Etiam lacinia mi.</p>
+                            </div>
+                        </article>
+
+                    </div><!-- End dessert menu -->
+
+                    <!-- Dinner -->
+                    <div role="tabpanel"  aria-labelledby="tab-5" id="tabpanel-5" tabindex="0"
+                        data-aos="fade-up" data-aos-delay="1000">
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/diner-1-192x146.jpg 192w, public/images/menu/diner-1-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/diner-1-320x200.jpg"
+                                alt="Hors-d'œuvre du chef" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Hors-d'œuvre du chef</h3>
+                                    <span class="menu__price">50 €</span>
+                                </div>
+                                <p class="menu__text">Morbi at tincidunt quam, ut rhoncus ligula. Donec libero turpis, eleifend id ultrices posuere, pretium eget quam. Proin nec tempus enim.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init aos-animate" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/diner-2-192x146.jpg 192w, public/images/menu/diner-2-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/diner-2-320x200.jpg" alt=" Salade Rainbow"
+                                loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title"> Salade Rainbow</h3>
+                                    <span class="menu__price">50 €</span>
+                                </div>
+                                <p class="menu__text">Nullam gravida neque eu leo porttitor sagittis. Sed est ligula, venenatis tincidunt pretium sit amet, scelerisque et tortor.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/diner-3-192x146.jpg 192w, public/images/menu/diner-3-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/diner-3-320x200.jpg"
+                                alt="Filet de boeuf échalotes confites" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Filet de boeuf échalotes confites</h3>
+                                    <span class="menu__price">30 €</span>
+                                </div>
+                                <p class="menu__text">Morbi ornare elit et tristique semper. Quisque ultrices vehicula mi, vitae consectetur ante semper at. In ullamcorper condimentum.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/diner-4-192x146.jpg 192w, public/images/menu/diner-4-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/diner-4-320x200.jpg"
+                                alt="Filet de boeuf aux légumes frais" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Filet de boeuf aux légumes frais</h3>
+                                    <span class="menu__price">50 €</span>
+                                </div>
+                                <p class="menu__text">Morbi ornare elit et tristique semper. Quisque ultrices vehicula mi, vitae consectetur ante semper at. In ullamcorper condimentum.</p>
+                            </div>
+                        </article>
+
+                        <article class="menu__item aos-init" data-aos="zoom-in">
+                            <img class="menu__img"
+                                srcset="public/images/menu/diner-5-192x146.jpg 192w, public/images/menu/diner-5-320x200.jpg 320w"
+                                sizes="(min-width: 40em) 192px, 320px" src="public/images/menu/diner-5-320x200.jpg"
+                                alt="Côtelette d'agneau au pesto vert" loading="lazy">
+                            <div>
+                                <div class="menu__header">
+                                    <h3 class="menu__header-title">Côtelette d'agneau au pesto vert</h3>
+                                    <span class="menu__price">50 €</span>
+                                </div>
+                                <p class="menu__text">Morbi ornare elit et tristique semper. Quisque ultrices vehicula mi, vitae consectetur
+                                    ante semper at. In ullamcorper condimentum.</p>
+                            </div>
+                        </article>
+
+                    </div> <!-- En diner menu -->
+
                 </div>
+                
             </div>
     
         </section>
@@ -238,10 +581,10 @@
                         <div class="chefs__underline"></div>
                         <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
                         <div class="chefs__social-icons">
-                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook William Fleury" class="chefs__social-icon  fab fa-facebook"></span></a>
-                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin William Fleury" class="chefs__social-icon  fab fa-linkedin"></span></a>
-                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest William Fleury" class="chefs__social-icon  fab fa-pinterest"></span></a>
-                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter William Fleury" class="chefs__social-icon  fab fa-twitter"></span></a>
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank" title="facebook William Fleury"><span class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank" title="linkedin William Fleury"><span class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank" title="pinterest William Fleury"><span class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank" title="twitter William Fleury"><span class="chefs__social-icon  fab fa-twitter"></span></a>
                         </div>
                     </div>
                 </div><!-- End chef item 1 -->
@@ -256,10 +599,10 @@
                         <div class="chefs__underline"></div>
                         <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
                         <div class="chefs__social-icons">
-                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook Amélia Meyer" class="chefs__social-icon  fab fa-facebook"></span></a>
-                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin Amélia Meyer" class="chefs__social-icon  fab fa-linkedin"></span></a>
-                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest Amélia Meyer" class="chefs__social-icon  fab fa-pinterest"></span></a>
-                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter Amélia Meyer" class="chefs__social-icon  fab fa-twitter"></span></a>
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank" title="facebook Amélia Meyer"><span class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank" title="linkedin Amélia Meyer"><span class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank" title="pinterest Amélia Meyer"><span class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank" title="twitter Amélia Meyer"><span class="chefs__social-icon  fab fa-twitter"></span></a>
                         </div>
                     </div>
                 </div><!-- End chef item 2 -->
@@ -274,10 +617,10 @@
                         <div class="chefs__underline"></div>
                         <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
                         <div class="chefs__social-icons">
-                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook Alice Dumaillet" class="chefs__social-icon  fab fa-facebook"></span></a>
-                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin Alice Dumaillet" class="chefs__social-icon  fab fa-linkedin"></span></a>
-                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest Alice Dumaillet" class="chefs__social-icon  fab fa-pinterest"></span></a>
-                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter Alice Dumaillet" class="chefs__social-icon  fab fa-twitter"></span></a>
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank" title="facebook Alice Dumaillet"><span class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank" title="linkedin Alice Dumaillet"><span class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank" title="pinterest Alice Dumaillet"><span class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank" title="twitter Alice Dumaillet"><span class="chefs__social-icon  fab fa-twitter"></span></a>
                         </div>
                     </div>
                 </div><!-- End chef item 3 -->
@@ -292,10 +635,10 @@
                         <div class="chefs__underline"></div>
                         <p>Sint atque expedita assumenda blanditiis reiciendis molestiae</p>
                         <div class="chefs__social-icons">
-                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook Thomas Boulanger" class="chefs__social-icon  fab fa-facebook"></span></a>
-                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank"><span title="linkedin Thomas Boulanger" class="chefs__social-icon  fab fa-linkedin"></span></a>
-                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest Thomas Boulanger" class="chefs__social-icon  fab fa-pinterest"></span></a>
-                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank"><span title="twitter Thomas Boulanger" class="chefs__social-icon  fab fa-twitter"></span></a>
+                            <a class="chefs__link-js" href="https://fr-fr.facebook.com/" target="_blank" title="facebook Thomas Boulanger"><span class="chefs__social-icon  fab fa-facebook"></span></a>
+                            <a class="chefs__link-js" href="https://www.linkedin.com/" target="_blank" title="linkedin Thomas Boulanger"><span class="chefs__social-icon  fab fa-linkedin"></span></a>
+                            <a class="chefs__link-js" href="https://www.pinterest.fr/" target="_blank" title="pinterest Thomas Boulanger"><span class="chefs__social-icon  fab fa-pinterest"></span></a>
+                            <a class="chefs__link-js" href="https://twitter.com/" target="_blank" title="twitter Thomas Boulanger"><span class="chefs__social-icon  fab fa-twitter"></span></a>
                         </div>
                     </div>
                 </div><!-- End chef item 4 -->
@@ -439,10 +782,10 @@
 
                 </address>
                 <div class="footer__social-icons">
-                    <a class="footer__social" href="https://fr-fr.facebook.com/" target="_blank"><span title="facebook" class="footer__social-icon  fab fa-facebook"></span></a>
-                    <a class="footer__social" href="https://fr-fr.facebook.com/" target="_blank"><span title="linkedin" class="footer__social-icon  fab fa-linkedin"></span></a>
-                    <a class="footer__social" href="https://www.pinterest.fr/" target="_blank"><span title="pinterest" class="footer__social-icon  fab fa-pinterest"></span></a>
-                    <a class="footer__social" href="https://twitter.com/" target="_blank"><span title="twitter" class="footer__social-icon  fab fa-twitter"></span></a>
+                    <a class="footer__social" href="https://fr-fr.facebook.com/" target="_blank" title="facebook"><span class="footer__social-icon  fab fa-facebook"></span></a>
+                    <a class="footer__social" href="https://fr-fr.facebook.com/" target="_blank" title="linkedin"><span class="footer__social-icon  fab fa-linkedin"></span></a>
+                    <a class="footer__social" href="https://www.pinterest.fr/" target="_blank" title="pinterest"><span class="footer__social-icon  fab fa-pinterest"></span></a>
+                    <a class="footer__social" href="https://twitter.com/" target="_blank" title="twitter"><span class="footer__social-icon  fab fa-twitter"></span></a>
                 </div>
 
             </div><!-- End item 1 -->
@@ -495,6 +838,9 @@
 
     <!-- Animate On Scroll Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Animate On Scroll vendors file -->
+    <script src="sass/vendors/aos/aos.js"></script>r
 
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>

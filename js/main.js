@@ -562,18 +562,6 @@ let tablist = document.querySelector("[role=tablist]");
 tablist.addEventListener('keydown',handleBtnFocusTransfer);
 
 
-
-
-/**
- *  Animate On Scroll Library
- */
- AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    delay: "50",
-    once: "true",
-
- });
   
 /**
  *  Validation de tous les formulaires
