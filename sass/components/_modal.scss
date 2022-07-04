@@ -26,6 +26,7 @@
     overflow: hidden; /* [2] */
   }
   &__inner{
+    position: relative;
     max-width: 27.813rem;
     background-color: $modal-bg-color;
     @include borderRadius;

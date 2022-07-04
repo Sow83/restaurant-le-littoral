@@ -37,3 +37,24 @@
     opacity: 1;
   }
 }
+
+
+/*--------------------------------------------------------------*\
+  #Configuration d'accessibilité
+
+  La requêtes média CSS prefers-reduced-motion détecte si l'utilisateur a demandé au
+  système de minimiser la quantité d'animation ou de mouvement.
+  Les lecteurs souffrant de troubles du mouvement vestibulaire peuvent souhaiter activer
+  la fonction de réduction du mouvement sur leur appareil avant de visionner l'animation.
+\*--------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  //Modal
+  .animation-modal {
+    animation: none;
+  }
+// Animate on scroll (Aos)
+  [data-aos] {
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+  }
+}
