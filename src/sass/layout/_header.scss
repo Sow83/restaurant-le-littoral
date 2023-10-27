@@ -6,6 +6,7 @@
     background-color: $header-bg-color;
     box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 50%);
     &__skip-nav{
+    // Contenu invisible réservé au lecteur d'écran et utilisateur de clavier
     position: absolute;
     left:-10000px;
     top:auto;

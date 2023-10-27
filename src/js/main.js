@@ -649,7 +649,12 @@ forms.forEach(form => {
                 responseMessage.textContent = "Votre souscription a bien été envoyé"; 
             }
             form.reset();
-            e.preventDefault();          
+            setTimeout(() => {
+                responseMessage.textContent = ""
+                responseMessage.style.border ="none"
+                responseMessage.textContent=""
+            }, 5000);    
+            e.preventDefault();     
         }
     });   
 });

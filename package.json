@@ -4,8 +4,8 @@
   "description": "Site de présentation du restaurant Le littoral",
   "main": "main.js",
   "scripts": {
-    "sass": "sass --watch sass/main.scss:public/css/style.css --style compressed",
-    "prefix": "postcss public/css/style.css --use autoprefixer -d public/css/prefixed/"
+    "sass": "sass --watch src/sass/main.scss:src/public/css/style.css --style compressed",
+    "prefix": "postcss src/public/css/style.css --use autoprefixer -d src/public/css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,14 @@
   "browserslist": "last 4 versions",
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.3",
+    "gulp-copy": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-uglify": "^3.0.2",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "sass": "^1.53.0"

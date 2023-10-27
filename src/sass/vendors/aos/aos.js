@@ -6,5 +6,4 @@
   easing: 'ease-in-out',
   delay: "50",
   once: "true",
-
 });
