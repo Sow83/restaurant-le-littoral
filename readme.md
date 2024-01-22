@@ -6,6 +6,6 @@ et de fichiers conçues, telles que BEM, et à l'utilisation de SASS, un précom
 # Vous pouvez clonez ce projet et exécuter la commande "npm install" 
 
 # Exécuter sass avec npm :  npm run sass
-
+# NB: Hors ligne pour le moment 
 # Démo: https://restaurant-le-littoral.mouhamadousow.fr/
 
